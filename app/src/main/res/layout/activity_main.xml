@@ -129,35 +129,6 @@
         android:background="#d8d8d8"
         android:orientation="vertical"></LinearLayout>
 
-    <TextView
-        android:id="@+id/textpass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Gubunsun"
-        android:layout_alignStart="@+id/Gubunsun"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="10dp"
-        android:text="회원이 아니신가요?"
-        android:textColor="#000000"
-        android:textSize="12dp" />
-    <RelativeLayout
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:layout_below="@+id/Gubunsun"
-        android:layout_alignEnd="@+id/Gubunsun"
-        >
-
-        <TextView
-            android:id="@+id/new_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="3dp"
-            android:text="회원가입하기"
-            android:textColor="#000000"
-            android:textSize="12dp" />
-    </RelativeLayout>
 
     <ImageButton
         android:id="@+id/btnOk"
