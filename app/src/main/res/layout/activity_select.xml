@@ -61,7 +61,7 @@
             android:background="@drawable/select_box">
 
             <ImageButton
-                android:id="@+id/img_reserve"
+                android:id="@+id/img_lockermanage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_centerVertical="true"
@@ -73,7 +73,7 @@
                 android:layout_width="160dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="20dp"
-                android:layout_toEndOf="@+id/img_reserve"
+                android:layout_toEndOf="@+id/img_lockermanage"
                 android:orientation="vertical">
 
                 <TextView
@@ -114,7 +114,7 @@
             android:background="@drawable/select_box">
 
             <ImageButton
-                android:id="@+id/img_otpcheck"
+                android:id="@+id/img_noticemanage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_centerVertical="true"
@@ -126,7 +126,7 @@
                 android:layout_width="160dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="20dp"
-                android:layout_toEndOf="@+id/img_otpcheck"
+                android:layout_toEndOf="@+id/img_noticemanage"
                 android:orientation="vertical">
 
                 <TextView
