@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectNamAdmin">
         <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LockerListActivity"
+            android:exported="false" />
+        <activity
             android:name=".SelectActivity"
             android:exported="false" />
         <activity

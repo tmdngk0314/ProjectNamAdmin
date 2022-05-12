@@ -35,7 +35,7 @@
         android:layout_below="@+id/firstRela"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="아이디와 비밀번호를 입력해주세요."
+        android:text="프작남 관리자 로그인"
         android:textColor="#000000"
         android:textSize="14dp" />
 
@@ -70,20 +70,21 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/RePass"
         android:layout_width="280dp"
         android:layout_height="50dp"
-        android:background="@drawable/border_gray"
         android:layout_below="@+id/ReEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:id="@+id/RePass">
+        android:background="@drawable/border_gray">
+
         <ImageView
+            android:id="@+id/passwordImage"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:background="@drawable/password"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:id="@+id/passwordImage"/>
+            android:background="@drawable/password" />
 
         <EditText
             android:id="@+id/edt_inputpw"
@@ -99,42 +100,83 @@
             android:textSize="16dp" />  <!--edittext 밑줄제거 background-->
     </RelativeLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:id="@+id/Rela_saveaccount"
+    <RelativeLayout
+        android:id="@+id/Rela_code"
         android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/RePass"
+        android:layout_height="50dp"
+        android:layout_below="@+id/RePass"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:background="#efefef">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="   자동 로그인"/>
-        <CheckBox
-            android:id="@+id/chk_saveaccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"/>
-    </LinearLayout>
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_gray">
+
+        <ImageView
+            android:id="@+id/codeImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/password" />
+
+        <EditText
+            android:id="@+id/edt_inputcode"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_toRightOf="@+id/codeImage"
+            android:background="@android:color/transparent"
+            android:hint="사물함 코드"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textSize="16dp" />  <!--edittext 밑줄제거 background-->
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/Gubunsun"
         android:layout_width="280dp"
         android:layout_height="1dp"
-        android:layout_below="@+id/Rela_saveaccount"
+        android:layout_below="@+id/Rela_code"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:background="#d8d8d8"
         android:orientation="vertical"></LinearLayout>
+
+    <TextView
+        android:id="@+id/textpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Gubunsun"
+        android:layout_alignStart="@+id/Gubunsun"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="10dp"
+        android:text="회원이 아니신가요?"
+        android:textColor="#000000"
+        android:textSize="12dp" />
+    <RelativeLayout
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/Gubunsun"
+        android:layout_alignEnd="@+id/Gubunsun"
+        >
+
+        <TextView
+            android:id="@+id/new_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="3dp"
+            android:text="회원가입하기"
+            android:textColor="#000000"
+            android:textSize="12dp" />
+    </RelativeLayout>
 
 
     <ImageButton
         android:id="@+id/btnOk"
         android:layout_width="280dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/Gubunsun"
+        android:layout_below="@+id/textpass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:background="@drawable/ok" />
