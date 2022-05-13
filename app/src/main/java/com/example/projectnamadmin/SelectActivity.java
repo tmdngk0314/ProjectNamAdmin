@@ -2,6 +2,7 @@ package com.example.projectnamadmin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -40,6 +41,13 @@ public class SelectActivity extends AppCompatActivity {
 
             }
         });
+        firstRela.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, LockerListActivity.class);
+                startActivity(intent);
+            }
+        });
 
         secondRela.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event){
@@ -51,6 +59,13 @@ public class SelectActivity extends AppCompatActivity {
             public boolean onTouch(View view, MotionEvent event){
                 return onTouchReserve(event,firstRela);
 
+            }
+        });
+        lockermanage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, LockerListActivity.class);
+                startActivity(intent);
             }
         });
         noticemanage.setOnTouchListener(new View.OnTouchListener(){

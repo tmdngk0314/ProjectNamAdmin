@@ -145,7 +145,7 @@
                     android:fontFamily="@font/nanumsquareb"
                     android:text="공지사항을 관리합니다"
                     android:textColor="#000000"
-                    android:textSize="11sp" />
+                    android:textSize="11sp"/>
             </LinearLayout>
 
             <ImageButton
@@ -153,11 +153,8 @@
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/searchLinear"
-                android:background="@drawable/right_arrow" />
-
+                android:background="@drawable/right_arrow"/>
         </RelativeLayout>
-
-
 
     </RelativeLayout>
 </LinearLayout>
