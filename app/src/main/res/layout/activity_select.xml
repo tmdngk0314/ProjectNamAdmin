@@ -66,7 +66,7 @@
                 android:layout_height="50dp"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="20dp"
-                android:background="@drawable/select_notice" />
+                android:background="@drawable/img_lockermanage" />
 
             <LinearLayout
                 android:id="@+id/storeLinear"
@@ -119,7 +119,7 @@
                 android:layout_height="50dp"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="20dp"
-                android:background="@drawable/select_notice" />
+                android:background="@drawable/img_noticemanage" />
 
             <LinearLayout
                 android:id="@+id/searchLinear"
