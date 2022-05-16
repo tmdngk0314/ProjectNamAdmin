@@ -9,9 +9,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton btnOK;
+    TextView new_account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnOK = (ImageButton) findViewById(R.id.btnOk);
+        new_account = (TextView)findViewById(R.id.new_account);
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
                     default: return false;
                 }
 
+            }
+        });
+
+        new_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(intent);
             }
         });
 
