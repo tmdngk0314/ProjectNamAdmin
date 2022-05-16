@@ -65,8 +65,8 @@
             android:layout_toRightOf="@+id/globalImage"
             android:background="@android:color/transparent"
             android:hint="아이디"
-            android:textSize="16dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="16dp" />
     </RelativeLayout>
 
     <RelativeLayout
