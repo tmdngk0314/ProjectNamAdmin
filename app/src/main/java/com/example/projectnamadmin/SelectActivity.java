@@ -10,8 +10,8 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 public class SelectActivity extends AppCompatActivity {
-    RelativeLayout firstRela, secondRela;
-    ImageButton lockermanage, noticemanage;
+    RelativeLayout firstRela, secondRela, thirdRela;
+    ImageButton lockermanage, noticemanage, otpcheck;
 
     public boolean onTouchReserve(MotionEvent event, RelativeLayout a){
         switch(event.getAction()){
@@ -32,8 +32,10 @@ public class SelectActivity extends AppCompatActivity {
 
         firstRela = (RelativeLayout) findViewById(R.id.firstRela);
         secondRela = (RelativeLayout) findViewById(R.id.secondRela);
+        thirdRela = (RelativeLayout)findViewById(R.id.thirdRela);
         lockermanage = (ImageButton) findViewById(R.id.img_lockermanage);
         noticemanage = (ImageButton) findViewById(R.id.img_noticemanage);
+        otpcheck = (ImageButton)findViewById(R.id.img_otpcheck);
 
         firstRela.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event){
@@ -45,6 +47,21 @@ public class SelectActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SelectActivity.this, LockerListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        thirdRela.setOnTouchListener(new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event){
+                return onTouchReserve(event,thirdRela);
+
+            }
+        });
+        thirdRela.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, LockerListActivity.class);
+                //otp 액티비티로 바꿔야함
                 startActivity(intent);
             }
         });
@@ -71,6 +88,20 @@ public class SelectActivity extends AppCompatActivity {
         noticemanage.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event){
                 return onTouchReserve(event,secondRela);
+
+            }
+        });
+        otpcheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, LockerListActivity.class);
+                //otp액티비티로 바꿔야함
+                startActivity(intent);
+            }
+        });
+        otpcheck.setOnTouchListener(new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event){
+                return onTouchReserve(event,thirdRela);
 
             }
         });
