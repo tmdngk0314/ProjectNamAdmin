@@ -45,7 +45,7 @@ public class LockerListActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if(lockerInfo.result.equals("diffIP")){
+     /*   if(lockerInfo.result.equals("diffIP")){
             Log.e("Login Session", "다른 기기에서 로그인되었음" );
             Toast.makeText(this, "다른 기기에서 로그인되어 종료합니다.", Toast.LENGTH_SHORT).show();
             moveTaskToBack(true);
@@ -56,7 +56,7 @@ public class LockerListActivity extends AppCompatActivity {
         adapter = new LockerListAdapter(getApplicationContext(), lockerInfo,OverrallList);
         lockerlistView.setAdapter(adapter);
 
-       lockerlistView.setOnItemClickListener(lockerClickListener);
+       lockerlistView.setOnItemClickListener(lockerClickListener);*/
 
 
     }

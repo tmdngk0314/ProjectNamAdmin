@@ -25,9 +25,7 @@ public class SelectDayActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SelectDayActivity.this,CheckLockerActivity.class);
-                intent.putExtra("연", Year);
-                intent.putExtra("월", Month);
-                intent.putExtra("일", Day);
+                intent.putExtra("날짜", Year + "-"+Month + "-" + Day);
                 startActivity(intent);
                 finish();
             }
