@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".CheckLockerActivity"
+            android:exported="false" />
+        <activity
             android:name=".SelectDayActivity"
             android:exported="false" />
         <activity
