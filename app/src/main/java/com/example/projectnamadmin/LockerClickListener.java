@@ -22,11 +22,11 @@ public class LockerClickListener implements AdapterView.OnItemClickListener {
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         lockername = ((LockerListActivity) context).lockerInfo.lockername[position];
         location = ((LockerListActivity) context).lockerInfo.location[position];
-        /*Intent intent = new Intent(context, ReserveActivity.class);
+        Intent intent = new Intent(context, SelectDayActivity.class);
         intent.putExtra("lockername",lockername);
         intent.putExtra("location",location);
         context.startActivity(intent);
-        ((LockerListActivity) context).finish();*/
+        ((LockerListActivity) context).finish();
 
 
     }

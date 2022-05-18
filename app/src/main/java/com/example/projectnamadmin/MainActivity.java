@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnOK = (ImageButton) findViewById(R.id.btnOk);
         new_account = (TextView)findViewById(R.id.new_account);
+        new_account.setPaintFlags(new_account.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +54,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(intent);
+            }
+        });
+        new_account.setOnTouchListener(new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event){
+                switch(event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        new_account.setTextColor(Color.GRAY);
+                        return false;
+                    case MotionEvent.ACTION_UP:
+                        new_account.setTextColor(Color.BLACK);
+                        return false;
+                    default: return false;
+                }
+
             }
         });
 

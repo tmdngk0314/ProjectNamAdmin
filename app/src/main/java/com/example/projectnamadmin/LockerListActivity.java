@@ -34,7 +34,7 @@ public class LockerListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locker_list);
-        /*LockerClickListener lockerClickListener = new LockerClickListener(this);*/
+        LockerClickListener lockerClickListener = new LockerClickListener(this);
 
         lockerlistView = (ListView) findViewById(R.id.lockerlistView);
         lockerInfo = apiCaller.loadLockerlist();
@@ -56,7 +56,7 @@ public class LockerListActivity extends AppCompatActivity {
         adapter = new LockerListAdapter(getApplicationContext(), lockerInfo,OverrallList);
         lockerlistView.setAdapter(adapter);
 
-       /* lockerlistView.setOnItemClickListener(lockerClickListener); */
+       lockerlistView.setOnItemClickListener(lockerClickListener);
 
 
     }
