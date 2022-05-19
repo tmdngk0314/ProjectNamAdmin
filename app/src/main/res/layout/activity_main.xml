@@ -100,42 +100,12 @@
             android:textSize="16dp" />  <!--edittext 밑줄제거 background-->
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/Rela_code"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/RePass"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/border_gray">
-
-        <ImageView
-            android:id="@+id/codeImage"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/password" />
-
-        <EditText
-            android:id="@+id/edt_inputcode"
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="1dp"
-            android:layout_toRightOf="@+id/codeImage"
-            android:background="@android:color/transparent"
-            android:hint="사물함 코드"
-            android:inputType="textPassword"
-            android:textColor="@color/black"
-            android:textSize="16dp" />  <!--edittext 밑줄제거 background-->
-    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/Gubunsun"
         android:layout_width="280dp"
         android:layout_height="1dp"
-        android:layout_below="@+id/Rela_code"
+        android:layout_below="@+id/RePass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:background="#d8d8d8"

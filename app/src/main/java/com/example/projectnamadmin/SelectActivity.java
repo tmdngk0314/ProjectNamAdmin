@@ -10,8 +10,8 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 public class SelectActivity extends AppCompatActivity {
-    RelativeLayout firstRela, secondRela, thirdRela;
-    ImageButton lockermanage, noticemanage, otpcheck;
+    RelativeLayout firstRela, secondRela, thirdRela, forthRela;
+    ImageButton lockermanage, noticemanage, otpcheck, overdue;
 
     public boolean onTouchReserve(MotionEvent event, RelativeLayout a){
         switch(event.getAction()){
@@ -33,9 +33,12 @@ public class SelectActivity extends AppCompatActivity {
         firstRela = (RelativeLayout) findViewById(R.id.firstRela);
         secondRela = (RelativeLayout) findViewById(R.id.secondRela);
         thirdRela = (RelativeLayout)findViewById(R.id.thirdRela);
+        forthRela = (RelativeLayout)findViewById(R.id.forthRela);
         lockermanage = (ImageButton) findViewById(R.id.img_lockermanage);
         noticemanage = (ImageButton) findViewById(R.id.img_noticemanage);
         otpcheck = (ImageButton)findViewById(R.id.img_otpcheck);
+        overdue = (ImageButton)findViewById(R.id.img_overdue);
+
 
         firstRela.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event){

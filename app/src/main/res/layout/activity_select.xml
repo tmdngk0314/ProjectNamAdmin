@@ -105,10 +105,62 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/secondRela"
+            android:id="@+id/forthRela"
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_below="@+id/firstRela"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/select_box">
+
+            <ImageButton
+                android:id="@+id/img_overdue"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/overdue" />
+
+            <LinearLayout
+                android:id="@+id/searchLinear3"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/img_overdue"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nanumsquareb"
+                    android:text="연체된 사물함 관리"
+                    android:textColor="#000000"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/nanumsquareb"
+                    android:text="연체된 사물함을 관리합니다"
+                    android:textColor="#000000"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/searchLinear3"
+                android:background="@drawable/right_arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/secondRela"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/forthRela"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="@drawable/select_box">
