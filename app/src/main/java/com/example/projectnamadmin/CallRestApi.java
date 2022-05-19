@@ -123,6 +123,7 @@ public class CallRestApi {
         thread.start();
         while(thread.isAlive());
     }
+    /*
     public NoticeInfo loadNotice(int page){
         JSONObject jsonPage=new JSONObject();
         Integer[] index=new Integer[10];
@@ -197,16 +198,16 @@ public class CallRestApi {
             return new LockerInfo();
         }
     }
+    */
 
-
-    public String newAccount(SharedPreferences deviceInfo, String name, String email, String id, String pw){
+    public String newAccount(SharedPreferences deviceInfo, String email, String id, String pw, String lockercode){
         JSONObject info = new JSONObject();
         try {
-            info.put("name", name);
             info.put("email", email);
-            info.put("newId", id);
+            info.put("id", id);
             info.put("pw", pw);
-            postRestAPI(info, "newaccount");
+            info.put("lockercode", lockercode);
+            postRestAPI(info, "admin/new_account");
             String result="None";
             if(lastResponseCode==200) {
                 result = receivedJSONObject.getString("result");
@@ -224,7 +225,7 @@ public class CallRestApi {
             return "JSONException";
         }
     }
-
+    /*
     public String login(String id, String pw){
         JSONObject info = new JSONObject();
         try{
@@ -262,6 +263,8 @@ public class CallRestApi {
             return "unknown";
         }
     }
+     */
+    /*
     public String logout(){
         JSONObject info = new JSONObject();
         try{
@@ -282,8 +285,8 @@ public class CallRestApi {
             e.printStackTrace();
             return "unknown";
         }
-    }
-
+    }*/
+    /*
     public String sendVerifyingEmail(){
         JSONObject info = new JSONObject();
         try{
@@ -299,7 +302,9 @@ public class CallRestApi {
             e.printStackTrace();
             return "unknown";
         }
-    }
+    }*/
+
+    /*
     public String verifyingCode(String code){
         JSONObject info = new JSONObject();
         try{
@@ -316,7 +321,9 @@ public class CallRestApi {
             e.printStackTrace();
             return "unknown";
         }
-    }
+    }*/
+
+    /*
     public String unverifyingCode(){
         JSONObject info = new JSONObject();
         try{
@@ -333,6 +340,11 @@ public class CallRestApi {
             return "unknown";
         }
     }
+
+    */
+
+
+     /*
     public String changePassword(String oldpw, String newpw){
         JSONObject info = new JSONObject();
         try{
@@ -352,6 +364,8 @@ public class CallRestApi {
         }
     }
 
+      */
+/*
     public String reissuanceotp(SharedPreferences deviceInfo, String id){
         JSONObject info = new JSONObject();
         try{
@@ -374,6 +388,9 @@ public class CallRestApi {
             return "unknown";
         }
     }
+
+ */
+    /*
     public String deleteAccount(SharedPreferences deviceSettings){
         JSONObject info = new JSONObject();
         try{
@@ -395,36 +412,8 @@ public class CallRestApi {
             return "None";
         }
     }
-    public ReservationStatus checkReservationStatus(){
-        JSONObject info = new JSONObject();
-        ReservationStatus status = new ReservationStatus();
-        try{
-            postRestAPI(info, "client/reservation/check_reservation_status");
-            String result="None";
-            status.result=result;
-            if(lastResponseCode==200) {
-                result = receivedJSONObject.getString("result");
-                status.result=result;
-                if(result.equals("diffIP") || result.equals("idle"))
-                    return status;
-                else if(result.equals("reserved") || result.equals("using") || result.equals("overdue")){
-                    status.startdate=receivedJSONObject.getString("startdate");
-                    status.enddate=receivedJSONObject.getString("enddate");
-                    status.usinglockername=receivedJSONObject.getString("usinglockername");
-                    status.location=receivedJSONObject.getString("location");
-                    if(result.equals("using"))
-                        status.lockernum=receivedJSONObject.getInt("lockernum");
-                }
-            }
-            return status;
-        }
-        catch(JSONException e){
-            Log.i("JSONException", "failed to put json data:"+e.getMessage());
-            e.printStackTrace();
-            status.result="exception";
-            return status;
-        }
-    }
+    */
+     /*
     public FullReservationInfo loadFullReservedDates(String lockername){
         JSONObject info = new JSONObject();
         FullReservationInfo response=new FullReservationInfo();
@@ -453,39 +442,6 @@ public class CallRestApi {
         }
         return response;
     }
-    public String reserve(String lockername, String startdate, String enddate){
-        JSONObject info = new JSONObject();
-        try{
-            info.put("lockername", lockername);
-            info.put("startdate", startdate);
-            info.put("enddate", enddate);
-            String result="None";
-            postRestAPI(info, "client/reservation/reserve");
-            if(lastResponseCode==200){
-                result=receivedJSONObject.getString("result");
-                return result;
-            }
-            return result;
-        }catch(Exception e){
-            e.printStackTrace();
-            return "unknown statement";
-        }
-    }
-
-    public String CancelReservation(SharedPreferences deviceSettings){
-        JSONObject info = new JSONObject();
-        try{
-            String result="None";
-            postRestAPI(info, "client/reservation/cancel");
-            if(lastResponseCode==200){
-                result=receivedJSONObject.getString("result");
-            }
-            return result;
-        }catch(Exception e){
-            e.printStackTrace();
-            return "unknown statement";
-        }
-
-    }
+    */
 
 }

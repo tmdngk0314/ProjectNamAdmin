@@ -251,7 +251,7 @@
                 android:layout_height="25dp"
                 android:layout_below="@id/ReCode"
                 android:layout_centerHorizontal="true"
-                android:text="사물함코드가 존재하지 않습니다."
+                android:text="사물함코드 형식이 아닙니다."
                 android:textColor="#FF0000"
                 android:textSize="10dp"
                 android:visibility="invisible" />
