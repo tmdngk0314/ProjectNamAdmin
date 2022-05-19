@@ -37,7 +37,7 @@ public class LockerListActivity extends AppCompatActivity {
         LockerClickListener lockerClickListener = new LockerClickListener(this);
 
         lockerlistView = (ListView) findViewById(R.id.lockerlistView);
-        lockerInfo = apiCaller.loadLockerlist();
+//        lockerInfo = apiCaller.loadLockerlist();
 
         try {
             OverrallList = apiCaller.receivedJSONObject.getInt("result");

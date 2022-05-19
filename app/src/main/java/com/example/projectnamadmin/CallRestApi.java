@@ -204,7 +204,7 @@ public class CallRestApi {
         JSONObject info = new JSONObject();
         try {
             info.put("email", email);
-            info.put("id", id);
+            info.put("newid", id);
             info.put("pw", pw);
             info.put("lockercode", lockercode);
             postRestAPI(info, "admin/new_account");
