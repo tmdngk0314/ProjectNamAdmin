@@ -63,7 +63,7 @@ public class SelectActivity extends AppCompatActivity {
         thirdRela.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SelectActivity.this, LockerListActivity.class);
+                Intent intent = new Intent(SelectActivity.this, OtpActivity.class);
                 //otp 액티비티로 바꿔야함
                 startActivity(intent);
             }
@@ -97,7 +97,7 @@ public class SelectActivity extends AppCompatActivity {
         otpcheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SelectActivity.this, LockerListActivity.class);
+                Intent intent = new Intent(SelectActivity.this, OtpActivity.class);
                 //otp액티비티로 바꿔야함
                 startActivity(intent);
             }
