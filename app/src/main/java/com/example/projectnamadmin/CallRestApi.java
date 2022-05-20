@@ -272,7 +272,7 @@ public class CallRestApi {
             String result="None";
             if(lastResponseCode==200) {
                 result = receivedJSONObject.getString("result");
-                if(result.compareTo("success")==0){
+                if(result.equals("success")){
                     CurrentLoggedInID.resetInfo();
                 }
             }
@@ -282,6 +282,31 @@ public class CallRestApi {
             Log.i("JSONException", "failed to put json data:"+e.getMessage());
             e.printStackTrace();
             return "unknown";
+        }
+    }
+    public LockerStatusInfo loadLockerStatus(){
+        JSONObject info = new JSONObject();
+        LockerStatusInfo resultInfo=new LockerStatusInfo();
+        resultInfo.result="None";
+        try{
+            postRestAPI(info, "admin/manage/load_locker_status");
+            if(lastResponseCode==200){
+                String result=receivedJSONObject.getString("result");
+                resultInfo.result=result;
+                if(result.equals("success")){
+                    int size=receivedJSONObject.getInt("length");
+                    resultInfo.setSize(size);
+                    for(int i=0; i<size; i++){
+                        String status = receivedJSONObject.getString("#"+Integer.toString(i+1));
+                        resultInfo.setStatus(status, i+1);
+                    }
+                }
+            }
+            return resultInfo;
+        }catch(JSONException e){
+            Log.e("JSONException", "failed to put json data:"+e.getMessage());
+            e.printStackTrace();
+            return resultInfo;
         }
     }
     /*
