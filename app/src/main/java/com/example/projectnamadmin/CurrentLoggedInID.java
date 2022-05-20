@@ -10,6 +10,7 @@ public class CurrentLoggedInID {
     public static Boolean isLoggedIn=false;
     private static String token="";
     private static String lockername="";
+    private static String location="";
 
     public static void resetInfo(){
         ID="";
@@ -17,6 +18,13 @@ public class CurrentLoggedInID {
         isLoggedIn=false;
         token="";
         lockername="";
+        location="";
+    }
+    public static String getLocation(){
+        return location;
+    }
+    public static void setLocation(String inputlocation){
+        location=inputlocation;
     }
 
     public static String getLockername() {

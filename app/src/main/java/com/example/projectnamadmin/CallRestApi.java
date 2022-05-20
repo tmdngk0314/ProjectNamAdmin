@@ -238,10 +238,11 @@ public class CallRestApi {
                 result = receivedJSONObject.getString("result");
                 if(result.compareTo("success")==0){
                     String token=receivedJSONObject.getString("token");
-                    CurrentLoggedInID.setAuthToken(token);
-                    CurrentLoggedInID.ID=id;
                     String email=receivedJSONObject.getString("email");
                     String lockername=receivedJSONObject.getString("lockername");
+                    String location=receivedJSONObject.getString("location");
+                    CurrentLoggedInID.setAuthToken(token);
+                    CurrentLoggedInID.setLocation(location);
                     CurrentLoggedInID.setLockername(lockername);
                     int frontnum=email.indexOf('@')-1;
                     String resultEmail=email.substring(0, 4);
@@ -250,6 +251,7 @@ public class CallRestApi {
                     }
                     resultEmail+=email.substring(frontnum+1);
                     CurrentLoggedInID.email=resultEmail;
+                    CurrentLoggedInID.ID=id;
                 }else
                     CurrentLoggedInID.resetInfo();
             }
