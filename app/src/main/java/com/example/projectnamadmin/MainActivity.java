@@ -6,15 +6,19 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton btnOK;
     TextView new_account;
+    EditText edt_inputid;
+    EditText edt_inputpw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +28,35 @@ public class MainActivity extends AppCompatActivity {
         btnOK = (ImageButton) findViewById(R.id.btnOk);
         new_account = (TextView)findViewById(R.id.new_account);
         new_account.setPaintFlags(new_account.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        edt_inputid = (EditText)findViewById(R.id.edt_inputid);
+        edt_inputpw = (EditText)findViewById(R.id.edt_inputpw);
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SelectActivity.class);
-                startActivity(intent);
-                finish();
+                String input_id=edt_inputid.getText().toString();
+                String input_pw=edt_inputpw.getText().toString();
+                if(input_id.length()>0 && input_pw.length()>0){
+                    CallRestApi apiCaller = new CallRestApi();
+                    String result = apiCaller.login(input_id, input_pw);
+                    switch(result){
+                        case "success":
+                            Log.i("로그인", "로그인 성공");
+                            CurrentLoggedInID.isLoggedIn=true;
+                            Toast.makeText(MainActivity.this, "반갑습니다!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this, SelectActivity.class);
+                            startActivity(intent);
+                            finish();
+                            break;
+                        case "no match":
+                            Toast.makeText(MainActivity.this, "아이디/패스워드 불일치", Toast.LENGTH_SHORT).show();
+                            Log.e("로그인", "아이디/비밀번호 불일치");
+                            break;
+                        default:
+                            Toast.makeText(MainActivity.this, "서버 연결 오류", Toast.LENGTH_SHORT).show();
+                            Log.e("로그인", "unknown:알 수 없는 오류");
+                    }
+                }
             }
         });
 
@@ -70,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
+
+    
 }

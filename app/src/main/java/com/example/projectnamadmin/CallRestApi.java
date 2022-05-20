@@ -95,7 +95,6 @@ public class CallRestApi {
                     lastResponseCode=response;
                     String responseMessage = conn.getResponseMessage();
                     System.out.println("----responseMessage----- : "+responseMessage);
-
                     InputStream is = conn.getInputStream();
                     StringBuilder builder = new StringBuilder();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
@@ -225,7 +224,7 @@ public class CallRestApi {
             return "JSONException";
         }
     }
-    /*
+
     public String login(String id, String pw){
         JSONObject info = new JSONObject();
         try{
@@ -233,7 +232,7 @@ public class CallRestApi {
             info.put("pw", pw);
             CurrentLoggedInID.ID=id;
 
-            postRestAPI(info, "client/login");
+            postRestAPI(info, "admin/login");
             String result="None";
             if(lastResponseCode==200) {
                 result = receivedJSONObject.getString("result");
@@ -241,20 +240,21 @@ public class CallRestApi {
                     String token=receivedJSONObject.getString("token");
                     CurrentLoggedInID.setAuthToken(token);
                     CurrentLoggedInID.ID=id;
-                    CurrentLoggedInID.name=receivedJSONObject.getString("name");
                     String email=receivedJSONObject.getString("email");
+                    String lockername=receivedJSONObject.getString("lockername");
+                    CurrentLoggedInID.setLockername(lockername);
                     int frontnum=email.indexOf('@')-1;
                     String resultEmail=email.substring(0, 4);
                     for(int i=3; i<frontnum; i++){
                         resultEmail+='*';
                     }
-                    resultEmail+=email.substring(frontnum+1, email.length());
+                    resultEmail+=email.substring(frontnum+1);
                     CurrentLoggedInID.email=resultEmail;
                 }else
-                    CurrentLoggedInID.resetAuthToken();
+                    CurrentLoggedInID.resetInfo();
             }
             else
-                CurrentLoggedInID.resetAuthToken();
+                CurrentLoggedInID.resetInfo();
             return result;
         }
         catch(JSONException e){
@@ -263,19 +263,17 @@ public class CallRestApi {
             return "unknown";
         }
     }
-     */
-    /*
+
+
     public String logout(){
         JSONObject info = new JSONObject();
         try{
-            postRestAPI(info, "client/logout");
+            postRestAPI(info, "admin/logout");
             String result="None";
             if(lastResponseCode==200) {
                 result = receivedJSONObject.getString("result");
                 if(result.compareTo("success")==0){
-                    CurrentLoggedInID.ID="";
-                    CurrentLoggedInID.isLoggedIn=false;
-                    CurrentLoggedInID.resetAuthToken();
+                    CurrentLoggedInID.resetInfo();
                 }
             }
             return result;
@@ -285,7 +283,7 @@ public class CallRestApi {
             e.printStackTrace();
             return "unknown";
         }
-    }*/
+    }
     /*
     public String sendVerifyingEmail(){
         JSONObject info = new JSONObject();

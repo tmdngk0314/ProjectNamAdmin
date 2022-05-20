@@ -8,11 +8,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class SelectActivity extends AppCompatActivity {
     RelativeLayout firstRela, secondRela, thirdRela, forthRela;
-    ImageButton lockermanage, noticemanage, otpcheck, overdue;
-
+    ImageButton lockermanage, noticemanage, otpcheck, overdue, btn_logout;
     public boolean onTouchReserve(MotionEvent event, RelativeLayout a){
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
@@ -38,7 +38,22 @@ public class SelectActivity extends AppCompatActivity {
         noticemanage = (ImageButton) findViewById(R.id.img_noticemanage);
         otpcheck = (ImageButton)findViewById(R.id.img_otpcheck);
         overdue = (ImageButton)findViewById(R.id.img_overdue);
+        btn_logout=(ImageButton)findViewById(R.id.imgBtnLogout);
 
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CallRestApi apiCaller = new CallRestApi();
+                String result=apiCaller.logout();
+                if(result.equals("success")){
+                    CurrentLoggedInID.resetInfo();
+                    Toast.makeText(SelectActivity.this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SelectActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
 
         firstRela.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event){
@@ -110,5 +125,20 @@ public class SelectActivity extends AppCompatActivity {
         });
 
 
+
+        startService(new Intent(this, ForcedTerminationService.class)); // 앱 강제종료 시 로그아웃하는 서비스
+
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(CurrentLoggedInID.isLoggedIn==true) {
+            Toast.makeText(this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+            CallRestApi apiCaller = new CallRestApi();
+            apiCaller.logout();
+            CurrentLoggedInID.resetInfo();
+        }
+        super.onDestroy();
     }
 }
