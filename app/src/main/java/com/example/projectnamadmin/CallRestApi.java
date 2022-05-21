@@ -224,7 +224,24 @@ public class CallRestApi {
             return "JSONException";
         }
     }
+    public void setFCMToken(){
+        JSONObject info=new JSONObject();
+        try {
+            info.put("fcmtoken", CurrentLoggedInID.getFCMtoken());
+            postRestAPI(info, "setfcmtoken");
+            String result="None";
+            if(lastResponseCode==200) {
+                result = receivedJSONObject.getString("result");
+                switch (result) {
+                    case "success":
 
+                }
+            }
+        } catch (JSONException e) {
+            Log.i("JSONException", "failed to put json data:"+e.getMessage());
+            e.printStackTrace();
+        }
+    }
     public String login(String id, String pw){
         JSONObject info = new JSONObject();
         try{

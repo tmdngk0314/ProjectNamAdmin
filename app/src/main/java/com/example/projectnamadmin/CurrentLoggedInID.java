@@ -11,7 +11,14 @@ public class CurrentLoggedInID {
     private static String token="";
     private static String lockername="";
     private static String location="";
+    private static String fcmtoken="";
 
+    public static String getFCMtoken() {
+        return fcmtoken;
+    }
+    public static void setFCMToken(String input){
+        fcmtoken=input;
+    }
     public static void resetInfo(){
         ID="";
         email="";

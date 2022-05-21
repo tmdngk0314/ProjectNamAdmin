@@ -14,6 +14,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+
 public class MainActivity extends AppCompatActivity {
     ImageButton btnOK;
     TextView new_account;
@@ -30,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
         new_account.setPaintFlags(new_account.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         edt_inputid = (EditText)findViewById(R.id.edt_inputid);
         edt_inputpw = (EditText)findViewById(R.id.edt_inputpw);
+
+        // 푸시 알림 토큰 가져오기
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener( MainActivity.this,  new OnSuccessListener<InstanceIdResult>() {
+            @Override
+            public void onSuccess(InstanceIdResult instanceIdResult) {
+                String newToken = instanceIdResult.getToken();
+                Log.e("newToken",newToken);
+                CurrentLoggedInID.setFCMToken(newToken);
+            }
+        });
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override

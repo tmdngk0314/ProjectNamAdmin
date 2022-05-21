@@ -40,6 +40,10 @@ public class SelectActivity extends AppCompatActivity {
         overdue = (ImageButton)findViewById(R.id.img_overdue);
         btn_logout=(ImageButton)findViewById(R.id.imgBtnLogout);
 
+        CallRestApi apiCaller = new CallRestApi();
+        apiCaller.setFCMToken();
+
+
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
