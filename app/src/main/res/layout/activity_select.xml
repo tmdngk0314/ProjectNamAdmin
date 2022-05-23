@@ -197,7 +197,7 @@
                     android:fontFamily="@font/nanumsquareb"
                     android:text="공지사항을 관리합니다"
                     android:textColor="#000000"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
             </LinearLayout>
 
             <ImageButton

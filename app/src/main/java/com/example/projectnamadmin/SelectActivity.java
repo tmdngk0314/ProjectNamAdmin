@@ -83,7 +83,6 @@ public class SelectActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SelectActivity.this, OtpActivity.class);
-                //otp 액티비티로 바꿔야함
                 startActivity(intent);
             }
         });
