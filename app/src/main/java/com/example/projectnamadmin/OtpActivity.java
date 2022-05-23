@@ -46,7 +46,9 @@ public class OtpActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Calendar calendar = Calendar.getInstance();
+                deviceInfo=getSharedPreferences("accountOTP", 0);
                 curSecond = calendar.get(Calendar.SECOND);
+                otp = ManageOTP.getCurrentOTP(CurrentLoggedInID.ID, deviceInfo);
 
                 //1초마다 동작시킬 코드
                 new Thread(new Runnable() {
