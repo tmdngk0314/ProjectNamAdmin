@@ -15,6 +15,8 @@ public class CheckLockerActivity extends AppCompatActivity {
     private List<CheckLockerInfo> lockerinfolist;
     String selectdate;
     TextView txt_lockername, txt_lockeraddress;
+    LockerStatusInfo statusInfo;
+    CallRestApi apiCaller;
 
 
     @Override
@@ -24,6 +26,7 @@ public class CheckLockerActivity extends AppCompatActivity {
         txt_lockername = (TextView)findViewById(R.id.txt_lockername);
         txt_lockeraddress = (TextView)findViewById(R.id.txt_lockeraddress);
         selectdate = getIntent().getExtras().getString("날짜");
+        statusInfo = apiCaller.loadLockerStatus();
 
         txt_lockername.setText(selectdate);
 
