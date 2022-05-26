@@ -28,7 +28,7 @@
             android:name=".OtpActivity"
             android:exported="false" />
         <activity
-            android:name=".CheckLockerActivity"
+            android:name=".LockerDetailActivity"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"

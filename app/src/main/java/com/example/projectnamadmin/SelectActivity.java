@@ -68,7 +68,7 @@ public class SelectActivity extends AppCompatActivity {
         firstRela.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SelectActivity.this, CheckLockerActivity.class);
+                Intent intent = new Intent(SelectActivity.this, LockerDetailActivity.class);
                 startActivity(intent);
             }
         });
@@ -102,7 +102,7 @@ public class SelectActivity extends AppCompatActivity {
         lockermanage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SelectActivity.this, CheckLockerActivity.class);
+                Intent intent = new Intent(SelectActivity.this, LockerDetailActivity.class);
                 startActivity(intent);
             }
         });
