@@ -93,6 +93,14 @@ public class SelectActivity extends AppCompatActivity {
 
             }
         });
+        secondRela.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, NoticeActivity.class);
+                startActivity(intent);
+            }
+        });
+
         lockermanage.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event){
                 return onTouchReserve(event,firstRela);

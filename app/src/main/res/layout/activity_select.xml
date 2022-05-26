@@ -205,7 +205,7 @@
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/searchLinear"
-                android:background="@drawable/right_arrow"/>
+                android:background="@drawable/right_arrow" />
         </RelativeLayout>
 
         <RelativeLayout
