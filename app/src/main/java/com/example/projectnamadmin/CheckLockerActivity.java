@@ -14,17 +14,18 @@ public class CheckLockerActivity extends AppCompatActivity {
     private CheckLockerAdapter adapter;
     private List<CheckLockerInfo> lockerinfolist;
     String selectdate;
-    TextView textselectday;
+    TextView txt_lockername, txt_lockeraddress;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_locker);
-        textselectday = (TextView)findViewById(R.id.text_selcetday);
+        txt_lockername = (TextView)findViewById(R.id.txt_lockername);
+        txt_lockeraddress = (TextView)findViewById(R.id.txt_lockeraddress);
         selectdate = getIntent().getExtras().getString("날짜");
 
-        textselectday.setText(selectdate);
+        txt_lockername.setText(selectdate);
 
         checklockerlist = (ListView)findViewById(R.id.lockerlistView);
         lockerinfolist = new ArrayList<CheckLockerInfo>();

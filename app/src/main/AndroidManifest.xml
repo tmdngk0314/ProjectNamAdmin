@@ -31,13 +31,7 @@
             android:name=".CheckLockerActivity"
             android:exported="false" />
         <activity
-            android:name=".SelectDayActivity"
-            android:exported="false" />
-        <activity
             android:name=".SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LockerListActivity"
             android:exported="false" />
         <activity
             android:name=".SelectActivity"
