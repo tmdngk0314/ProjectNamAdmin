@@ -122,7 +122,7 @@ public class CallRestApi {
         thread.start();
         while(thread.isAlive());
     }
-    /*
+
     public NoticeInfo loadNotice(int page){
         JSONObject jsonPage=new JSONObject();
         Integer[] index=new Integer[10];
@@ -164,7 +164,7 @@ public class CallRestApi {
             return new NoticeInfo();
         }
     }
-
+    /*
     public LockerInfo loadLockerlist(){
         JSONObject info= new JSONObject();
         String[] location=new String[10];
@@ -196,8 +196,8 @@ public class CallRestApi {
             e.printStackTrace();
             return new LockerInfo();
         }
-    }
-    */
+    }*/
+
 
     public String newAccount(SharedPreferences deviceInfo, String email, String id, String pw, String lockercode){
         JSONObject info = new JSONObject();

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/firstRela"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="#ffffff">
+
+        <ImageButton
+            android:id="@+id/goSelectAct"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/left_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/nanumsquareb"
+            android:text="공지사항"
+            android:textColor="#050505"
+            android:textSize="15dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/pageRelative"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/firstRela"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:visibility="visible">
+
+
+        <Button
+            android:id="@+id/pageBtnLeft"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/left_arrow"
+            android:clickable="false"
+            android:fontFamily="@font/nanumsquareb"
+            android:textColor="#888888"
+            android:textSize="13dp"
+            android:visibility="visible"/>
+
+        <Button
+            android:id="@+id/pageBtn1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/pageBtnLeft"
+            android:background="@color/NOBACKGROUND"
+            android:text="1"
+            android:textColor="#000000"
+            android:textSize="13dp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/pageBtn2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/pageBtn1"
+            android:background="@color/NOBACKGROUND"
+            android:text="2"
+            android:textColor="#888888"
+            android:textSize="13dp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/pageBtn3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/pageBtn2"
+            android:background="@color/NOBACKGROUND"
+            android:text="3"
+            android:textColor="#888888"
+            android:textSize="13dp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/pageBtn4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/pageBtn3"
+            android:background="@color/NOBACKGROUND"
+            android:text="4"
+            android:textColor="#888888"
+            android:textSize="13dp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/pageBtn5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/pageBtn4"
+            android:background="@color/NOBACKGROUND"
+            android:text="5"
+            android:textColor="#888888"
+            android:textSize="13dp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/pageBtn6"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/pageBtn5"
+            android:background="@drawable/right_arrow"
+            android:textColor="#888888"
+            android:textSize="13dp"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/noticeListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pageRelative"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ffffff"
+        android:divider="#efefef"
+        android:dividerHeight="10dp"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/noticeRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:layout_below="@+id/firstRela"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/notice_box"
+        android:padding="20dp"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/noticeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/border_gray"
+            android:fontFamily="@font/nanumsquareb"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/noticeDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/noticeTitle"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="13dp"
+            android:fontFamily="@font/gmarkme"
+            android:textSize="10dp" />
+
+        <ScrollView
+            android:id="@+id/noticeScroll"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:layout_below="@+id/noticeDate"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp">
+
+            <TextView
+                android:id="@+id/noticeBody"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/gmarkme" />
+        </ScrollView>
+
+        <ImageButton
+            android:id="@+id/noticeExit"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/noticeScroll"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ok" />
+
+    </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/btn_newNotice"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/newnotice"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"/>
+
+
+
+</RelativeLayout>
