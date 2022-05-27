@@ -18,10 +18,9 @@ public class ItemClickListener implements AdapterView.OnItemClickListener {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        ((LockerDetailActivity) context).noticeListView.setEnabled(false);
-        ((LockerDetailActivity) context).noticeTitle.setText(((NoticeActivity) context).noticeInfo.title[position]);
-        ((LockerDetailActivity) context).noticeDate.setText(((NoticeActivity) context).noticeInfo.date[position]);
-        ((LockerDetailActivity) context).noticeBody.setText(((NoticeActivity) context).noticeInfo.body[position]);
-        ((LockerDetailActivity) context).noticeRelative.setVisibility(VISIBLE);
+        ((LockerDetailActivity) context).popup_lockernum.setText(((LockerDetailActivity) context).detailInfo.getLockernum());
+        ((LockerDetailActivity) context).txt_status.setText(((LockerDetailActivity) context).statusInfo.getStatus(position));
+        /*detail api caller 사용해서 사용자 정보 불러오기*/
+        ((LockerDetailActivity) context).Rela_locker.setVisibility(VISIBLE);
     }
 }
