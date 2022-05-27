@@ -37,6 +37,7 @@ public class LockerDetailActivity extends AppCompatActivity {
     CallRestApi apiCaller = new CallRestApi();
     RelativeLayout Rela_status,Rela_locker;
     LockerDetailInfo detailInfo;
+    LoadLockerDetails loadLockerDetails;
 
 
     @Override
@@ -58,6 +59,7 @@ public class LockerDetailActivity extends AppCompatActivity {
         statusInfo = apiCaller.loadLockerStatus();
 
         PageChangeActivity pageChangeActivity = new PageChangeActivity(pageBtn);
+        ItemClickListener itemClickListener = new ItemClickListener(this);
 
         lockerDetailInfo = new ArrayList<LockerDetailInfo>();
 
@@ -78,6 +80,9 @@ public class LockerDetailActivity extends AppCompatActivity {
             }
 
         }
+
+
+        checklockerlist.setOnItemClickListener(itemClickListener);
 
 
     }

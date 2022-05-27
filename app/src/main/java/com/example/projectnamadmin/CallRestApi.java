@@ -328,6 +328,42 @@ public class CallRestApi {
             return resultInfo;
         }
     }
+
+    public LoadLockerDetails loadLockerDetails(int lockernum) {
+        JSONObject info = new JSONObject();
+        LoadLockerDetails resultInfo=new LoadLockerDetails(lockernum);
+        resultInfo.result="None";
+        try{
+            info.put("lockernum",lockernum);
+            postRestAPI(info, "admin/manage/load_locker_details");
+            if(lastResponseCode==200){
+                String result=receivedJSONObject.getString("result");
+                resultInfo.result=result;
+                if(result.equals("success")){
+                    String email = receivedJSONObject.getString("email" );
+                    String status = receivedJSONObject.getString("status");
+                    String startdate = receivedJSONObject.getString("startdate");
+                    String enddate = receivedJSONObject.getString("enddate");
+                    String name = receivedJSONObject.getString("name");
+                    String id = receivedJSONObject.getString("id");
+
+                    resultInfo.setName(name);
+                    resultInfo.setId(id);
+                    resultInfo.setEmail(email);
+                    resultInfo.setEnddate(enddate);
+                    resultInfo.setStartdate(startdate);
+                    resultInfo.setStatus(status);
+                }
+            }
+            Log.e("loadLockerDetails","Done.");
+            return resultInfo;
+        }catch(JSONException e){
+            Log.e("JSONException", "failed to put json data:"+e.getMessage());
+            e.printStackTrace();
+            return resultInfo;
+        }
+
+    }
     /*
     public String sendVerifyingEmail(){
         JSONObject info = new JSONObject();

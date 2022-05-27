@@ -33,7 +33,6 @@ public class LockerDetailAdapter extends BaseAdapter {
         View v = View.inflate(context, R.layout.locker_shape, null);
         TextView lockertext = (TextView)v.findViewById(R.id.lockertext);
         TextView statetext = (TextView)v.findViewById(R.id.stateText);
-        TextView datetext = (TextView)v.findViewById(R.id.dateText);
         lockertext.setText(Integer.toString(checkLockerlist.get(position).getLockernum()));
         statetext.setText(checkLockerlist.get(position).getLockerstatus());
         v.setTag(checkLockerlist.get(position).getLockernum());
