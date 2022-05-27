@@ -185,4 +185,222 @@
             android:visibility="visible" />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/noticeRelative"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_below="@+id/firstRela"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/notice_box"
+        android:padding="20dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/popup_lockernum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nanumsquareb"
+            android:gravity="center"
+            android:text="N"
+            android:textColor="#000000"
+            android:textSize="28dp" />
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/popup_lockernum"
+            android:fontFamily="@font/nanumsquareb"
+            android:gravity="center"
+            android:text="번 사물함"
+            android:textColor="#000000"
+            android:textSize="28dp" />
+
+        <TextView
+            android:id="@+id/txt_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Title"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:text="예약 상태"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+
+        <RelativeLayout
+            android:id="@+id/Rela_status"
+            android:layout_width="300dp"
+            android:layout_height="180dp"
+            android:layout_below="@+id/txt_status"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/user" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/img1"
+                android:text="이름  : "
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/text1"
+                android:text="홍길동"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_below="@+id/img1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/user" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/img2"
+                android:text="아이디  : "
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txt_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_name"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/text2"
+                android:text="tttttt0314"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_below="@+id/img2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/globalization" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/img3"
+                android:text="이메일  : "
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txt_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_id"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/text3"
+                android:text="tttttt0314@naver.com"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/img4"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_below="@+id/img3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/calendar" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text3"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/img4"
+                android:text="대여기간  : "
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txt_startdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_email"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/text4"
+                android:text="2022-04-15  ~"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txt_enddate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_startdate"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/text4"
+                android:text="2022-04-15"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/btn_reserveinfo"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/Rela_status"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/reserveinfo" />
+
+        <ImageButton
+            android:id="@+id/btn_reservecancel"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/btn_reserveinfo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/reservecancel" />
+
+    </RelativeLayout>
+
 </RelativeLayout>
