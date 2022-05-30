@@ -42,7 +42,7 @@ public class NoticeActivity extends AppCompatActivity {
 
     public TextView noticeTitle, noticeDate, noticeBody;
     public RelativeLayout noticeRelative;
-    public ImageButton noticeExitBtn, goSelectAct;
+    public ImageButton noticeExitBtn, goSelectAct, noticeDeleteBtn;
     public ImageButton btn_newNotice;
 
     CallRestApi apiCaller = new CallRestApi();
@@ -58,6 +58,7 @@ public class NoticeActivity extends AppCompatActivity {
         noticeRelative = (RelativeLayout)findViewById(R.id.noticeRelative);
         noticeExitBtn = (ImageButton)findViewById(R.id.noticeExit);
         btn_newNotice = (ImageButton)findViewById(R.id.btn_newNotice);
+        noticeDeleteBtn = (ImageButton)findViewById(R.id.noticeDelete);
         NoticeItemClickListener noticeitemClickListener = new NoticeItemClickListener(this);
         PageChangeActivity pageChange = new PageChangeActivity(pageBtn);
 
@@ -222,11 +223,34 @@ public class NoticeActivity extends AppCompatActivity {
                 noticeListView.setEnabled(true);
             }
         });
-        noticeExitBtn.setOnTouchListener(new OkTouch());
         goSelectAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        noticeDeleteBtn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Integer action=motionEvent.getAction();
+                if(action==MotionEvent.ACTION_DOWN){
+                    noticeDeleteBtn.setBackgroundResource(R.drawable.noticedel_touch);
+                }else if(action==MotionEvent.ACTION_UP){
+                    noticeDeleteBtn.setBackgroundResource(R.drawable.notice_del);
+                }
+                return false;
+            }
+        });
+        noticeExitBtn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Integer action=motionEvent.getAction();
+                if(action==MotionEvent.ACTION_DOWN){
+                    noticeExitBtn.setBackgroundResource(R.drawable.noticeok_touch);
+                }else if(action==MotionEvent.ACTION_UP){
+                    noticeExitBtn.setBackgroundResource(R.drawable.notice_ok);
+                }
+                return false;
             }
         });
     }

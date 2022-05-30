@@ -390,7 +390,7 @@
             android:layout_below="@+id/Rela_status"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:background="@drawable/reserveinfo" />
+            android:background="@drawable/ok" />
 
         <ImageButton
             android:id="@+id/btn_reservecancel"

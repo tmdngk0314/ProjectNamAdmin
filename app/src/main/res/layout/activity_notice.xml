@@ -186,25 +186,28 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/gmarkme" />
         </ScrollView>
+        <LinearLayout
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/noticeScroll"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
 
         <ImageButton
             android:id="@+id/noticeExit"
             android:layout_width="140dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/noticeScroll"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="match_parent"
             android:background="@drawable/notice_ok" />
-
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="1dp"/>
         <ImageButton
             android:id="@+id/noticeDelete"
             android:layout_width="140dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/noticeScroll"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/noticeExit"
-            android:background="@drawable/notice_del" />
+            android:layout_height="match_parent"
+            android:background="@drawable/notice_del" /></LinearLayout>
 
     </RelativeLayout>
 
