@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,9 +32,12 @@ public class LockerDetailActivity extends AppCompatActivity {
             R.id.pageBtn4, R.id.pageBtn5, R.id.pageBtn6};
 
 
-    TextView txt_lockername, txt_lockeraddress;
+    TextView txt_lockername, txt_lockeraddress,popup_lockernum, txt_status, txt_name, txt_id, txt_email, txt_startdate, txt_enddate;
     LockerStatusInfo statusInfo;
     CallRestApi apiCaller = new CallRestApi();
+    RelativeLayout Rela_status,Rela_locker;
+    LockerDetailInfo detailInfo;
+    LoadLockerDetails loadLockerDetails;
 
 
     @Override
@@ -43,9 +47,19 @@ public class LockerDetailActivity extends AppCompatActivity {
         checklockerlist = (ListView)findViewById(R.id.lockerlistView);
         txt_lockername = (TextView)findViewById(R.id.txt_lockername);
         txt_lockeraddress = (TextView)findViewById(R.id.txt_lockeraddress);
+        popup_lockernum = (TextView)findViewById(R.id.popup_lockernum);
+        txt_status = (TextView)findViewById(R.id.txt_status);
+        txt_name = (TextView)findViewById(R.id.txt_name);
+        txt_id = (TextView)findViewById(R.id.txt_id);
+        txt_email = (TextView)findViewById(R.id.txt_email);
+        txt_startdate = (TextView)findViewById(R.id.txt_startdate);
+        txt_enddate = (TextView)findViewById(R.id.txt_enddate);
+        Rela_status = (RelativeLayout)findViewById(R.id.Rela_status);
+        Rela_locker = (RelativeLayout)findViewById(R.id.Rela_locker);
         statusInfo = apiCaller.loadLockerStatus();
 
         PageChangeActivity pageChangeActivity = new PageChangeActivity(pageBtn);
+        ItemClickListener itemClickListener = new ItemClickListener(this);
 
         lockerDetailInfo = new ArrayList<LockerDetailInfo>();
 
@@ -66,6 +80,9 @@ public class LockerDetailActivity extends AppCompatActivity {
             }
 
         }
+
+
+        checklockerlist.setOnItemClickListener(itemClickListener);
 
 
     }
