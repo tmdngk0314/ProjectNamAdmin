@@ -1,5 +1,6 @@
 package com.example.projectnamadmin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -11,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresPermission;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -78,7 +80,9 @@ public class NoticeActivity extends AppCompatActivity {
         btn_newNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 공지사항 글쓰기
+                Intent intent = new Intent(NoticeActivity.this, WriteNoticeActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

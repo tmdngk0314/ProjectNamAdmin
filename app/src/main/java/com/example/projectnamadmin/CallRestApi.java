@@ -164,6 +164,26 @@ public class CallRestApi {
             return new NoticeInfo();
         }
     }
+    public String uploadNotice(String title, String body, Boolean pushtoclient){
+        JSONObject info=new JSONObject();
+        String result="None";
+        try {
+            String pushString;
+            if(pushtoclient) pushString="true";
+            else pushString="false";
+            info.put("title", title);
+            info.put("body", body);
+            info.put("pushtoclient", pushString);
+            postRestAPI(info, "notice/upload");
+            if(lastResponseCode==200) {
+                result = receivedJSONObject.getString("result");
+            }
+        } catch (JSONException e) {
+            Log.i("JSONException", "failed to put json data:"+e.getMessage());
+            e.printStackTrace();
+        }
+        return result;
+    }
     /*
     public LockerInfo loadLockerlist(){
         JSONObject info= new JSONObject();
