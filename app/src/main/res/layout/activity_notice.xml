@@ -189,12 +189,22 @@
 
         <ImageButton
             android:id="@+id/noticeExit"
-            android:layout_width="160dp"
-            android:layout_height="match_parent"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
             android:layout_below="@+id/noticeScroll"
-            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/ok" />
+            android:background="@drawable/notice_ok" />
+
+        <ImageButton
+            android:id="@+id/noticeDelete"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/noticeScroll"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/noticeExit"
+            android:background="@drawable/notice_del" />
 
     </RelativeLayout>
 
