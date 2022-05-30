@@ -58,7 +58,7 @@ public class NoticeActivity extends AppCompatActivity {
         noticeRelative = (RelativeLayout)findViewById(R.id.noticeRelative);
         noticeExitBtn = (ImageButton)findViewById(R.id.noticeExit);
         btn_newNotice = (ImageButton)findViewById(R.id.btn_newNotice);
-        ItemClickListener itemClickListener = new ItemClickListener(this);
+        NoticeItemClickListener noticeitemClickListener = new NoticeItemClickListener(this);
         PageChangeActivity pageChange = new PageChangeActivity(pageBtn);
 
         goSelectAct = (ImageButton)findViewById(R.id.goSelectAct) ;
@@ -210,7 +210,7 @@ public class NoticeActivity extends AppCompatActivity {
                 noticeListView.smoothScrollToPositionFromTop(0, 10, 300);
             }
         });
-        noticeListView.setOnItemClickListener(itemClickListener);
+        noticeListView.setOnItemClickListener(noticeitemClickListener);
         noticeExitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,7 +218,7 @@ public class NoticeActivity extends AppCompatActivity {
                 for(int i=0;i<7;i++){
                     pageBtn[i].setClickable(true);
                 }
-                noticeListView.setOnItemClickListener(itemClickListener);
+                noticeListView.setOnItemClickListener(noticeitemClickListener);
                 noticeListView.setEnabled(true);
             }
         });

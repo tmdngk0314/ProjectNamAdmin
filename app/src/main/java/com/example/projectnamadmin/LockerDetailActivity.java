@@ -36,7 +36,6 @@ public class LockerDetailActivity extends AppCompatActivity {
     LockerStatusInfo statusInfo;
     CallRestApi apiCaller = new CallRestApi();
     RelativeLayout Rela_status,Rela_locker;
-    LockerDetailInfo detailInfo;
     LoadLockerDetails loadLockerDetails;
 
 

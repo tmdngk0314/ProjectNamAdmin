@@ -22,14 +22,14 @@ public class ItemClickListener implements AdapterView.OnItemClickListener {
         Log.e("onItenClick", Integer.toString(position));
         lld = callRestApi.loadLockerDetails(position+1);
 
-        ((LockerDetailActivity) context).popup_lockernum.setText(((LockerDetailActivity) context).detailInfo.getLockernum());
-        ((LockerDetailActivity) context).txt_status.setText(((LockerDetailActivity) context).loadLockerDetails.getStatus());
+        ((LockerDetailActivity) context).popup_lockernum.setText(Integer.toString(position+1));
+        ((LockerDetailActivity) context).txt_status.setText(lld.getStatus());
         /*detail api caller 사용해서 사용자 정보 불러오기*/
-        ((LockerDetailActivity) context).txt_name.setText(((LockerDetailActivity) context).loadLockerDetails.getname());
-        ((LockerDetailActivity) context).txt_id.setText(((LockerDetailActivity) context).loadLockerDetails.getid());
-        ((LockerDetailActivity) context).txt_email.setText(((LockerDetailActivity) context).loadLockerDetails.getemail());
-        ((LockerDetailActivity) context).txt_startdate.setText(((LockerDetailActivity) context).loadLockerDetails.getStartdate());
-        ((LockerDetailActivity) context).txt_enddate.setText(((LockerDetailActivity) context).loadLockerDetails.getEnddate());
+        ((LockerDetailActivity) context).txt_name.setText(lld.getname());
+        ((LockerDetailActivity) context).txt_id.setText(lld.getid());
+        ((LockerDetailActivity) context).txt_email.setText(lld.getemail());
+        ((LockerDetailActivity) context).txt_startdate.setText(lld.getStartdate());
+        ((LockerDetailActivity) context).txt_enddate.setText(lld.getEnddate());
         ((LockerDetailActivity) context).Rela_locker.setVisibility(VISIBLE);
 
 
