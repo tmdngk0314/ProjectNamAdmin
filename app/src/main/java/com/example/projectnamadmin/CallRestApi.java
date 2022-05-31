@@ -377,18 +377,19 @@ public class CallRestApi {
                 String result=receivedJSONObject.getString("result");
                 resultInfo.result=result;
                 if(result.equals("success")){
-                    String email = receivedJSONObject.getString("email" );
                     String status = receivedJSONObject.getString("status");
-                    String startdate = receivedJSONObject.getString("startdate");
-                    String enddate = receivedJSONObject.getString("enddate");
-                    String name = receivedJSONObject.getString("name");
-                    String id = receivedJSONObject.getString("id");
-
-                    resultInfo.setName(name);
-                    resultInfo.setId(id);
-                    resultInfo.setEmail(email);
-                    resultInfo.setEnddate(enddate);
-                    resultInfo.setStartdate(startdate);
+                    if(!status.equals("idle")) {
+                        String email = receivedJSONObject.getString("email");
+                        String startdate = receivedJSONObject.getString("startdate");
+                        String enddate = receivedJSONObject.getString("enddate");
+                        String name = receivedJSONObject.getString("name");
+                        String id = receivedJSONObject.getString("id");
+                        resultInfo.setName(name);
+                        resultInfo.setId(id);
+                        resultInfo.setEmail(email);
+                        resultInfo.setEnddate(enddate);
+                        resultInfo.setStartdate(startdate);
+                    }
                     resultInfo.setStatus(status);
                 }
             }

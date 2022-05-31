@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -21,7 +22,7 @@ public class LockerDetailActivity extends AppCompatActivity {
     private int pageValue = 1;
     private int pageOffset=10;
 
-    private ListView checklockerlist;
+    public ListView checklockerlist;
     private LockerDetailAdapter adapter;
     private List<LockerDetailInfo> lockerDetailInfo;
 
@@ -37,6 +38,7 @@ public class LockerDetailActivity extends AppCompatActivity {
     CallRestApi apiCaller = new CallRestApi();
     RelativeLayout Rela_status,Rela_locker;
     LoadLockerDetails loadLockerDetails;
+    ImageButton btn_reservecancel;
 
 
     @Override
@@ -55,6 +57,8 @@ public class LockerDetailActivity extends AppCompatActivity {
         txt_enddate = (TextView)findViewById(R.id.txt_enddate);
         Rela_status = (RelativeLayout)findViewById(R.id.Rela_status);
         Rela_locker = (RelativeLayout)findViewById(R.id.Rela_locker);
+        btn_reservecancel = (ImageButton)findViewById(R.id.btn_reservecancel);
+
         statusInfo = apiCaller.loadLockerStatus();
 
         PageChangeActivity pageChangeActivity = new PageChangeActivity(pageBtn);
