@@ -2,6 +2,7 @@ package com.example.projectnamadmin;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.telecom.Call;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -44,6 +45,8 @@ public class NoticeActivity extends AppCompatActivity {
     public RelativeLayout noticeRelative;
     public ImageButton noticeExitBtn, goSelectAct, noticeDeleteBtn;
     public ImageButton btn_newNotice;
+
+    public Integer selectedIndex=0;
 
     CallRestApi apiCaller = new CallRestApi();
     @Override
@@ -108,6 +111,7 @@ public class NoticeActivity extends AppCompatActivity {
         else pageOffset = 10;
         NoticeInfo swap = new NoticeInfo();
         for(int j=0;j<pageOffset;j++){
+            swap.index[j] = noticeInfo.index[9-j-(10-pageOffset)];
             swap.title[j] = noticeInfo.title[9-j-(10-pageOffset)];
             swap.date[j] = noticeInfo.date[9-j-(10-pageOffset)];
             swap.body[j] = noticeInfo.body[9-j-(10-pageOffset)];
@@ -142,6 +146,7 @@ public class NoticeActivity extends AppCompatActivity {
                         else pageOffset = 10;
                         NoticeInfo swap = new NoticeInfo();
                         for(int j=0;j<pageOffset;j++){
+                            swap.index[j] = noticeInfo.index[9-j-(10-pageOffset)];
                             swap.title[j] = noticeInfo.title[9-j-(10-pageOffset)];
                             swap.date[j] = noticeInfo.date[9-j-(10-pageOffset)];
                             swap.body[j] = noticeInfo.body[9-j-(10-pageOffset)];
@@ -173,6 +178,7 @@ public class NoticeActivity extends AppCompatActivity {
                 else pageOffset = 10;
                 NoticeInfo swap = new NoticeInfo();
                 for(int j=0;j<pageOffset;j++){
+                    swap.index[j] = noticeInfo.index[9-j-(10-pageOffset)];
                     swap.title[j] = noticeInfo.title[9-j-(10-pageOffset)];
                     swap.date[j] = noticeInfo.date[9-j-(10-pageOffset)];
                     swap.body[j] = noticeInfo.body[9-j-(10-pageOffset)];
@@ -200,6 +206,7 @@ public class NoticeActivity extends AppCompatActivity {
                 else pageOffset = 10;
                 NoticeInfo swap = new NoticeInfo();
                 for(int j=0;j<pageOffset;j++){
+                    swap.index[j] = noticeInfo.index[9-j-(10-pageOffset)];
                     swap.title[j] = noticeInfo.title[9-j-(10-pageOffset)];
                     swap.date[j] = noticeInfo.date[9-j-(10-pageOffset)];
                     swap.body[j] = noticeInfo.body[9-j-(10-pageOffset)];
@@ -219,7 +226,7 @@ public class NoticeActivity extends AppCompatActivity {
                 for(int i=0;i<7;i++){
                     pageBtn[i].setClickable(true);
                 }
-                noticeListView.setOnItemClickListener(noticeitemClickListener);
+                //noticeListView.setOnItemClickListener(noticeitemClickListener);
                 noticeListView.setEnabled(true);
             }
         });
@@ -239,6 +246,24 @@ public class NoticeActivity extends AppCompatActivity {
                     noticeDeleteBtn.setBackgroundResource(R.drawable.notice_del);
                 }
                 return false;
+            }
+        });
+        noticeDeleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CallRestApi apiCaller = new CallRestApi();
+                Log.e("NoticeActivity", "selectedIndex:"+Integer.toString(selectedIndex));
+                String result=apiCaller.delete_notice(selectedIndex);
+                if(result.equals("success")){
+                    ActivityCompat.recreate(NoticeActivity.this);
+                }else if(result.equals("diffIP")){
+                    Log.e("Login Session", "다른 기기에서 로그인되었음" );
+                    Toast.makeText(NoticeActivity.this, "다른 기기에서 로그인되어 종료합니다.", Toast.LENGTH_SHORT).show();
+                    ActivityCompat.finishAffinity(NoticeActivity.this);
+                    System.exit(0);
+                }else{
+                    Toast.makeText(NoticeActivity.this, "공지사항 삭제를 실패했습니다.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         noticeExitBtn.setOnTouchListener(new View.OnTouchListener() {

@@ -3,6 +3,7 @@ package com.example.projectnamadmin;
 import static android.view.View.VISIBLE;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -30,5 +31,7 @@ public class NoticeItemClickListener implements AdapterView.OnItemClickListener 
         ((NoticeActivity) context).noticeDate.setText(((NoticeActivity) context).noticeInfo.date[position]);
         ((NoticeActivity) context).noticeBody.setText(((NoticeActivity) context).noticeInfo.body[position]);
         ((NoticeActivity) context).noticeRelative.setVisibility(VISIBLE);
+        ((NoticeActivity) context).selectedIndex=((NoticeActivity)context).noticeInfo.index[position];
+        Log.e("clicklistener", Integer.toString(((NoticeActivity)context).selectedIndex));
     }
 }

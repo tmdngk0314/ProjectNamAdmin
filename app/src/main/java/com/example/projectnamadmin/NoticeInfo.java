@@ -20,7 +20,9 @@ public class NoticeInfo extends CallRestApi{
     }
 
     public void setIndex(Integer[] index) {
-        this.index = index;
+        for(int i=0; i<index.length; i++){
+            this.index[i]=index[i];
+        }
     }
 
     public String[] getTitle() {

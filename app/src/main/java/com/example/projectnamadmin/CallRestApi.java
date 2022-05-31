@@ -161,7 +161,9 @@ public class CallRestApi {
         catch(Exception e){
             Log.i("JSONException", "failed to put json data:"+e.getMessage());
             e.printStackTrace();
-            return new NoticeInfo();
+            NoticeInfo info = new NoticeInfo();
+            info.result="None";
+            return info;
         }
     }
     public String uploadNotice(String title, String body, Boolean pushtoclient){
@@ -175,6 +177,21 @@ public class CallRestApi {
             info.put("body", body);
             info.put("pushtoclient", pushString);
             postRestAPI(info, "notice/upload");
+            if(lastResponseCode==200) {
+                result = receivedJSONObject.getString("result");
+            }
+        } catch (JSONException e) {
+            Log.i("JSONException", "failed to put json data:"+e.getMessage());
+            e.printStackTrace();
+        }
+        return result;
+    }
+    public String delete_notice(Integer index){
+        JSONObject info=new JSONObject();
+        String result="None";
+        try {
+            info.put("num", index);
+            postRestAPI(info, "notice/delete");
             if(lastResponseCode==200) {
                 result = receivedJSONObject.getString("result");
             }
