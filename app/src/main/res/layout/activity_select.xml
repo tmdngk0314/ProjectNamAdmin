@@ -261,5 +261,58 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/fifthRela"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/thirdRela"
+            android:background="@drawable/select_box">
+
+            <ImageButton
+                android:id="@+id/btn_admininfo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/img_admininfo" />
+
+            <LinearLayout
+                android:id="@+id/admininfoLinear"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/btn_admininfo"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nanumsquareb"
+                    android:text="관리자 계정 관리"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/nanumsquareb"
+                    android:text="otp 재발급, 비밀번호 변경등"
+                    android:textColor="#000000"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/admininfoLinear"
+                android:background="@drawable/right_arrow" />
+
+        </RelativeLayout>
+
     </RelativeLayout>
 </LinearLayout>

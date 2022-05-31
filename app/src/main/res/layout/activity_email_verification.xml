@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef">
+    <RelativeLayout
+        android:id="@+id/titlelayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="#ffffff">
+
+        <ImageButton
+            android:id="@+id/goSelectAct"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/left_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/nanumsquareb"
+            android:text="본인인증"
+            android:textColor="#050505"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_emailInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titlelayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="안전한 계정 사용을 위해 이메일 인증을 진행해주세요."
+        android:textColor="#000000"
+        android:textSize="14dp" />
+
+    <RelativeLayout
+        android:id="@+id/rela_code"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv_emailInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/border_gray">
+
+        <EditText
+            android:id="@+id/edt_code"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1dp"
+            android:autofillHints="name"
+            android:background="@android:color/transparent"
+            android:backgroundTint="#FF0000"
+            android:hint="인증번호"
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textColorHint="#999999"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_sendEmail"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/rela_code"
+        android:layout_alignStart="@id/rela_code"
+        android:layout_marginTop="5dp"
+        android:text="이메일 인증번호 발송" />
+
+    <TextView
+        android:id="@+id/tv_remaintime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/btn_sendEmail"
+        android:layout_toRightOf="@id/btn_sendEmail"
+        android:text="남은 시간:"
+        android:textColor="#FF0000"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tv_notice"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_sendEmail"
+        android:layout_alignStart="@+id/btn_sendEmail"
+        android:text="회원가입 시 입력한 이메일 주소로 인증번호가 발송되었습니다."
+        android:textSize="10dp"
+        android:visibility="invisible"/>
+    <ImageButton
+        android:id="@+id/btn_verify"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tv_notice"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/ok"
+        android:visibility="gone"/>
+
+
+
+
+</RelativeLayout>

@@ -11,8 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class SelectActivity extends AppCompatActivity {
-    RelativeLayout firstRela, secondRela, thirdRela, forthRela;
-    ImageButton lockermanage, noticemanage, otpcheck, overdue, btn_logout;
+    RelativeLayout firstRela, secondRela, thirdRela, forthRela, fifthRela;
+    ImageButton lockermanage, noticemanage, otpcheck, overdue, btn_logout, btn_admininfo;
     public boolean onTouchReserve(MotionEvent event, RelativeLayout a){
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
@@ -34,11 +34,13 @@ public class SelectActivity extends AppCompatActivity {
         secondRela = (RelativeLayout) findViewById(R.id.secondRela);
         thirdRela = (RelativeLayout)findViewById(R.id.thirdRela);
         forthRela = (RelativeLayout)findViewById(R.id.forthRela);
+        fifthRela = (RelativeLayout)findViewById(R.id.fifthRela);
         lockermanage = (ImageButton) findViewById(R.id.img_lockermanage);
         noticemanage = (ImageButton) findViewById(R.id.img_noticemanage);
         otpcheck = (ImageButton)findViewById(R.id.img_otpcheck);
         overdue = (ImageButton)findViewById(R.id.img_overdue);
         btn_logout=(ImageButton)findViewById(R.id.imgBtnLogout);
+        btn_admininfo = (ImageButton)findViewById(R.id.btn_admininfo);
 
         CallRestApi apiCaller = new CallRestApi();
         apiCaller.setFCMToken();
@@ -98,6 +100,32 @@ public class SelectActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SelectActivity.this, NoticeActivity.class);
                 startActivity(intent);
+            }
+        });
+        fifthRela.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, EmailVerificationActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_admininfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, EmailVerificationActivity.class);
+                startActivity(intent);
+            }
+        });
+        fifthRela.setOnTouchListener(new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event){
+                return onTouchReserve(event,fifthRela);
+
+            }
+        });
+        btn_admininfo.setOnTouchListener(new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event){
+                return onTouchReserve(event,fifthRela);
+
             }
         });
 
