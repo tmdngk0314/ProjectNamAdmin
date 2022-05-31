@@ -5,6 +5,8 @@ import androidx.core.app.ActivityCompat;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -38,7 +40,7 @@ public class LockerDetailActivity extends AppCompatActivity {
     CallRestApi apiCaller = new CallRestApi();
     RelativeLayout Rela_status,Rela_locker;
     LoadLockerDetails loadLockerDetails;
-    ImageButton btn_reservecancel;
+    ImageButton btn_reservecancel, btn_ok;
 
 
     @Override
@@ -58,6 +60,7 @@ public class LockerDetailActivity extends AppCompatActivity {
         Rela_status = (RelativeLayout)findViewById(R.id.Rela_status);
         Rela_locker = (RelativeLayout)findViewById(R.id.Rela_locker);
         btn_reservecancel = (ImageButton)findViewById(R.id.btn_reservecancel);
+        btn_ok = (ImageButton)findViewById(R.id.btn_ok);
 
         statusInfo = apiCaller.loadLockerStatus();
 
@@ -83,6 +86,28 @@ public class LockerDetailActivity extends AppCompatActivity {
             }
 
         }
+
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Rela_locker.setVisibility(View.INVISIBLE);
+                checklockerlist.setEnabled(true);
+            }
+        });
+        btn_ok.setOnTouchListener(new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event){
+                switch(event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        btn_ok.setBackgroundResource(R.drawable.ok_touch);
+                        return false;
+                    case MotionEvent.ACTION_UP:
+                        btn_ok.setBackgroundResource(R.drawable.ok);
+                        return false;
+                    default: return false;
+                }
+
+            }
+        });
 
 
         checklockerlist.setOnItemClickListener(itemClickListener);

@@ -384,7 +384,7 @@
         </RelativeLayout>
 
         <ImageButton
-            android:id="@+id/btn_reserveinfo"
+            android:id="@+id/btn_ok"
             android:layout_width="280dp"
             android:layout_height="40dp"
             android:layout_below="@+id/Rela_status"
@@ -396,7 +396,7 @@
             android:id="@+id/btn_reservecancel"
             android:layout_width="280dp"
             android:layout_height="40dp"
-            android:layout_below="@+id/btn_reserveinfo"
+            android:layout_below="@+id/btn_ok"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:background="@drawable/reservecancel" />
