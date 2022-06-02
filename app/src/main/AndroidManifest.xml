@@ -15,7 +15,8 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".delaccount_pop_up_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/DialogTheme"/>
         <activity
             android:name=".ChangePasswordActivity"
             android:exported="false" />

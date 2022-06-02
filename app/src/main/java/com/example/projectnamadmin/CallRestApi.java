@@ -506,11 +506,11 @@ public class CallRestApi {
     }
 
 
-    /*
+
     public String deleteAccount(SharedPreferences deviceSettings){
         JSONObject info = new JSONObject();
         try{
-            postRestAPI(info, "client/delete_account");
+            postRestAPI(info, "admin/delete_account");
             String result= "None";
             if(lastResponseCode==200){
                 result=receivedJSONObject.getString("result");
@@ -528,7 +528,7 @@ public class CallRestApi {
             return "None";
         }
     }
-    */
+
      /*
     public FullReservationInfo loadFullReservedDates(String lockername){
         JSONObject info = new JSONObject();
