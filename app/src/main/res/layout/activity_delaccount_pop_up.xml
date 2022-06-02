@@ -3,7 +3,7 @@
     android:layout_width="300dp"
     android:layout_height="160dp"
     android:layout_gravity="center"
-    android:background="#5bbfb5">
+    android:background="#adbede">
 
     <TextView
         android:id="@+id/text"
