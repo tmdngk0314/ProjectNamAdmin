@@ -460,13 +460,13 @@ public class CallRestApi {
 
 
 
-     /*
+
     public String changePassword(String oldpw, String newpw){
         JSONObject info = new JSONObject();
         try{
             info.put("oldpw", oldpw);
             info.put("newpw", newpw);
-            postRestAPI(info, "client/change_password");
+            postRestAPI(info, "admin/change_password");
             String result="None";
             if(lastResponseCode==200) {
                 result = receivedJSONObject.getString("result");
@@ -480,12 +480,12 @@ public class CallRestApi {
         }
     }
 
-      */
-/*
+
+
     public String reissuanceotp(SharedPreferences deviceInfo, String id){
         JSONObject info = new JSONObject();
         try{
-            postRestAPI(info, "client/reissuance_otpkey");
+            postRestAPI(info, "admin/reissuance_otpkey");
             String result="None";
             if(lastResponseCode==200) {
                 result = receivedJSONObject.getString("result");
@@ -505,7 +505,7 @@ public class CallRestApi {
         }
     }
 
- */
+
     /*
     public String deleteAccount(SharedPreferences deviceSettings){
         JSONObject info = new JSONObject();
