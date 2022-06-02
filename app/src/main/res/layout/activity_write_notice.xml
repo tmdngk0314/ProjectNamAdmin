@@ -108,8 +108,8 @@
                 android:id="@+id/btn_upload"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
-                android:background="@drawable/btn_upload"
-                android:layout_alignParentRight="true" />
+                android:layout_alignParentRight="true"
+                android:background="@drawable/btn_upload" />
 
         </RelativeLayout>
 
