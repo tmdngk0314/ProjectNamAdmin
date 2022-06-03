@@ -1,6 +1,7 @@
 package com.example.projectnamadmin;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -53,6 +54,7 @@ public class OverdueListAdapter extends BaseAdapter {
         TextView txt_enddate = (TextView) v.findViewById(R.id.txt_enddate);
         TextView txt_returntime = (TextView) v.findViewById(R.id.txt_returntime);
         TextView txt_status = (TextView) v.findViewById(R.id.txt_status);
+        TextView txt_lockernum = (TextView) v.findViewById(R.id.txt_lockernum);
         ImageButton btn_collect = (ImageButton) v.findViewById(R.id.btn_collect);
         ImageButton btn_return = (ImageButton) v.findViewById(R.id.btn_return);
         int index = 0;
@@ -64,18 +66,22 @@ public class OverdueListAdapter extends BaseAdapter {
         txt_email.setText(overdueInfo.email[index]);
         txt_startdate.setText(overdueInfo.startdate[index]);
         txt_enddate.setText(overdueInfo.enddate[index]);
+        txt_lockernum.setText(Integer.toString(overdueInfo.lockernum[index]));
         if (overdueInfo.iscollected[index].equals("true")){
             txt_status.setText("미반환");
+            txt_status.setTextColor(Color.parseColor("#FF8C00"));
             // 회수버튼 비활성화, 반환버튼 활성화 + 이미지 설정
         }
         else {
             txt_status.setText("미회수");
+            txt_status.setTextColor(Color.RED);
             // 회수버튼 활성화, 반환버튼 비활성화 + 이미지 설정
         }
         if(overdueInfo.returntime[index].equals("none")){
             txt_returntime.setText("N/A");
         }else{
             txt_returntime.setText(overdueInfo.returntime[index]);
+            txt_status.setTextColor(Color.parseColor("#32CD32"));
             txt_status.setText("반환 완료");
             // 회수버튼 비활성화, 반환버튼 비활성화 + 이미지 설정
         }
