@@ -403,6 +403,42 @@ public class CallRestApi {
 
     }
 
+    public OverdueListInfo loadOverdueList(){
+        JSONObject info = new JSONObject();
+        OverdueListInfo overdueListInfo = new OverdueListInfo();
+        overdueListInfo.result="none";
+        try{
+            postRestAPI(info, "admin/load_overdue_list");
+            if(lastResponseCode==200){
+                String result=receivedJSONObject.getString("result");
+                overdueListInfo.result=result;
+                if(result.equals("success")){
+                    int count=receivedJSONObject.getInt("length");
+                    overdueListInfo.count=count;
+                    overdueListInfo.init(count);
+                    for(int i=0; i<count; i++){
+                        overdueListInfo.num[i]=receivedJSONObject.getInt("num"+Integer.toString(i));
+                        overdueListInfo.name[i]=receivedJSONObject.getString("name"+Integer.toString(i));
+                        overdueListInfo.id[i]=receivedJSONObject.getString("id"+Integer.toString(i));
+                        overdueListInfo.email[i]=receivedJSONObject.getString("email"+Integer.toString(i));
+                        overdueListInfo.lockernum[i]=receivedJSONObject.getInt("lockernum"+Integer.toString(i));
+                        overdueListInfo.startdate[i]=receivedJSONObject.getString("startdate"+Integer.toString(i));
+                        overdueListInfo.enddate[i]=receivedJSONObject.getString("enddate"+Integer.toString(i));
+                        overdueListInfo.iscollected[i]=receivedJSONObject.getString("iscollected"+Integer.toString(i));
+                        overdueListInfo.returntime[i]=receivedJSONObject.getString("returntime"+Integer.toString(i));
+                    }
+                }
+
+            }
+        }catch(JSONException e){
+            Log.e("JSONException", "failed to put json data:"+e.getMessage());
+            e.printStackTrace();
+            return overdueListInfo;
+        }
+        return overdueListInfo;
+    }
+
+
     public String sendVerifyingEmail(){
         JSONObject info = new JSONObject();
         try{
