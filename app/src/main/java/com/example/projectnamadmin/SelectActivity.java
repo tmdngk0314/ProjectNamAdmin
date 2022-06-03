@@ -162,6 +162,32 @@ public class SelectActivity extends AppCompatActivity {
 
             }
         });
+        overdue.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                return onTouchReserve(event, forthRela);
+            }
+        });
+        forthRela.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                return onTouchReserve(event, forthRela);
+            }
+        });
+        forthRela.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SelectActivity.this, OverdueLockerManageActivity.class);
+                startActivity(intent);
+            }
+        });
+        overdue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SelectActivity.this, OverdueLockerManageActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

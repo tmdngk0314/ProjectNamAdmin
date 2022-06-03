@@ -142,7 +142,7 @@
         android:layout_toRightOf="@+id/txt_startdate"
         android:text="2022-04-15"
         android:textColor="#000000"
-        android:textSize="15dp"/>
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/text5"
@@ -177,6 +177,7 @@
         android:text="현재 상태 : "
         android:textColor="#000000"
         android:textSize="15dp" />
+
     <TextView
         android:id="@+id/txt_status"
         android:layout_width="wrap_content"
@@ -189,23 +190,45 @@
         android:textColor="#000000"
         android:textSize="15dp" />
 
+    <TextView
+        android:id="@+id/text7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text5"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="반환일시 :"
+        android:textColor="#000000" />
+    <TextView
+        android:id="@+id/txt_returntime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text5"
+        android:layout_toRightOf="@id/text7"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000000"
+        android:text="2022-05-01 13:59:07"/>
+
+
     <ImageButton
         android:id="@+id/btn_collect"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/btn_collect"
-        android:layout_toRightOf="@+id/txt_name" />
+        android:layout_toRightOf="@+id/txt_name"
+        android:background="@drawable/btn_collect" />
 
     <ImageButton
         android:id="@+id/btn_return"
         android:layout_width="50dp"
         android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/btn_return"
         android:layout_toRightOf="@+id/btn_collect"
-        android:layout_marginLeft="10dp"/>
+        android:background="@drawable/btn_return" />
 
 
 </RelativeLayout>
