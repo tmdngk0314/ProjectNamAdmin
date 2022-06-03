@@ -5,13 +5,10 @@
       <map>
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_locker_list.xml" value="0.264" />
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_main.xml" value="0.2015625" />
-        <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_manage_info.xml" value="0.176" />
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_notice.xml" value="0.144" />
-        <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_overdue_locker_manage.xml" value="0.152" />
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_select.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
-        <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/notice_shape.xml" value="0.264" />
-        <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/overduelocker_shape.xml" value="0.264" />
+        <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/notice_shape.xml" value="0.1234375" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.114" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/drawable/border_gray.xml" value="0.1905" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/drawable/ic_baseline_campaign_24.xml" value="0.149" />
@@ -19,12 +16,17 @@
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/drawable/img_locker.xml" value="0.1505" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/drawable/progress_shape.xml" value="0.1905" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/font/font.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_change_password.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_check_locker.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_delaccount_pop_up.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_email_verification.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_locker_detail.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_locker_list.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_main.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_notice.xml" value="0.11770833333333333" />
+        <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_manage_info.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_notice.xml" value="0.2" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_otp.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_overdue_locker_manage.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_select.xml" value="0.264" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_select_day.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/activity_sign_up.xml" value="0.15443840579710144" />
@@ -33,6 +35,7 @@
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/ic_baseline_campaogn_24.xml" value="0.15443840579710144" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/locker_shape.xml" value="0.4" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/notice_shape.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/layout/overduelocker_shape.xml" value="0.19947916666666668" />
       </map>
     </option>
   </component>
