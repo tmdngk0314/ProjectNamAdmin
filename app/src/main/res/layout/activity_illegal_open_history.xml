@@ -13,7 +13,7 @@
         android:background="#ffffff">
 
         <ImageButton
-            android:id="@+id/goSelectAct"
+            android:id="@+id/goBack"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"
@@ -172,7 +172,7 @@
     </RelativeLayout>
 
     <ListView
-        android:id="@+id/lockerlistView"
+        android:id="@+id/listview_illegalOpenHistory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pageRelative"

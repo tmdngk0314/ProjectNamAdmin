@@ -596,6 +596,35 @@ public class CallRestApi {
         }
         return result;
     }
+    public IllegalOpenHistoryInfo loadIllegalOpenHistory(){
+        JSONObject info = new JSONObject();
+        IllegalOpenHistoryInfo illegalInfo = new IllegalOpenHistoryInfo();
+        illegalInfo.result="None";
+        String result;
+        try{
+            postRestAPI(info, "admin/manage/load_illegal_open_history");
+            result="None";
+            if(lastResponseCode==200){
+                result=receivedJSONObject.getString("result");
+                illegalInfo.result=result;
+                if(result.equals("success")){
+                    int length=receivedJSONObject.getInt("length");
+                    illegalInfo.count=length;
+                    illegalInfo.init(length);
+                    for(int i=0; i<length; i++){
+                        illegalInfo.num[i]=receivedJSONObject.getInt("num"+Integer.toString(i));
+                        illegalInfo.lockernum[i]=receivedJSONObject.getInt("lockernum"+Integer.toString(i));
+                        illegalInfo.time[i]=receivedJSONObject.getString("time"+Integer.toString(i));
+                    }
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            return illegalInfo;
+        }
+        return illegalInfo;
+    }
+
 
      /*
     public FullReservationInfo loadFullReservedDates(String lockername){
