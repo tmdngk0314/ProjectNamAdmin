@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class OverdueLockerManageActivity extends AppCompatActivity {
     public OverdueListInfo overdueInfo = new OverdueListInfo();
 
     CallRestApi apiCaller = new CallRestApi();
+    ImageButton goSelectAct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class OverdueLockerManageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_overdue_locker_manage);
 
         overdueListView=(ListView)findViewById(R.id.overdueListView);
+        goSelectAct = (ImageButton) findViewById(R.id.goSelectAct);
 
         for (int i = 0; i < 7; i++) pageBtn[i] = (Button) findViewById(pageBtnName[i]);
 
@@ -116,13 +119,12 @@ public class OverdueLockerManageActivity extends AppCompatActivity {
             }
         });
 
-        /*goSelectAct.setOnClickListener(new View.OnClickListener() { // 뒤로가기
+        goSelectAct.setOnClickListener(new View.OnClickListener() { // 뒤로가기
             @Override
             public void onClick(View v) {
                 finish();
             }
-        });*/
-        ///////////////////////////////////////////////
+        });
 
     }
 }
