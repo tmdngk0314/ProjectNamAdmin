@@ -3,6 +3,7 @@ package com.example.projectnamadmin;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -40,7 +41,7 @@ public class LockerDetailActivity extends AppCompatActivity {
     CallRestApi apiCaller = new CallRestApi();
     RelativeLayout Rela_status,Rela_locker;
     LoadLockerDetails loadLockerDetails;
-    ImageButton btn_reservecancel, btn_ok, btn_back;
+    ImageButton btn_reservecancel, btn_ok, btn_back,btn_illegalopenhistory;
 
 
     @Override
@@ -62,6 +63,7 @@ public class LockerDetailActivity extends AppCompatActivity {
         btn_reservecancel = (ImageButton)findViewById(R.id.btn_reservecancel);
         btn_ok = (ImageButton)findViewById(R.id.btn_ok);
         btn_back = (ImageButton)findViewById(R.id.goSelectAct);
+        btn_illegalopenhistory = (ImageButton)findViewById(R.id.btn_illegalopenhistory);
 
         statusInfo = apiCaller.loadLockerStatus();
 
@@ -114,6 +116,27 @@ public class LockerDetailActivity extends AppCompatActivity {
                     default: return false;
                 }
 
+            }
+        });
+        btn_illegalopenhistory.setOnTouchListener(new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event){
+                switch(event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        btn_illegalopenhistory.setBackgroundResource(R.drawable.btn_touch_illegalopenhistory);
+                        return false;
+                    case MotionEvent.ACTION_UP:
+                        btn_illegalopenhistory.setBackgroundResource(R.drawable.btn_illegalopenhistory);
+                        return false;
+                    default: return false;
+                }
+
+            }
+        });
+        btn_illegalopenhistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(LockerDetailActivity.this,IllegalOpenHistoryActivity.class);
+                startActivity(intent);
             }
         });
 

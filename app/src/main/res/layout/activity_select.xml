@@ -265,9 +265,9 @@
             android:id="@+id/fifthRela"
             android:layout_width="300dp"
             android:layout_height="60dp"
+            android:layout_below="@+id/thirdRela"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_below="@+id/thirdRela"
             android:background="@drawable/select_box">
 
             <ImageButton
