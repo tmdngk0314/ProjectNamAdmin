@@ -42,6 +42,7 @@ public class ItemClickListener implements AdapterView.OnItemClickListener {
             ((LockerDetailActivity) context).txt_enddate.setText(" ");
         }
         ((LockerDetailActivity) context).checklockerlist.setEnabled(false);
+        ((LockerDetailActivity) context).btn_back.setEnabled(false);
         ((LockerDetailActivity) context).Rela_locker.setVisibility(VISIBLE);
 
 
