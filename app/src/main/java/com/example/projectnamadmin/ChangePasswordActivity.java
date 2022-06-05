@@ -22,7 +22,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
     EditText currentPass_Edt,newPass_Edt,newPassCheck_Edt;
     TextView newPasstext,newPasschecktxt;
     RelativeLayout Repass,Renewpass,Renewpasscheck;
-    ImageButton btn_ok;
+    ImageButton btn_ok,goSelectAct;
     boolean isAvailable_pw(String str){
         if(str.length()>16 || str.length()<8){
             return false;
@@ -51,7 +51,15 @@ public class ChangePasswordActivity extends AppCompatActivity {
         Renewpass = (RelativeLayout)findViewById(R.id.ChangePass);
         Renewpasscheck = (RelativeLayout)findViewById(R.id.newPassCheck);
         btn_ok=(ImageButton) findViewById(R.id.btnOk);
+        goSelectAct = (ImageButton)findViewById(R.id.goSelectAct);
         btn_ok.setEnabled(false);
+
+        goSelectAct.setOnClickListener(new View.OnClickListener() { // 뒤로가기
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         newPass_Edt.addTextChangedListener(new TextWatcher() {
             @Override

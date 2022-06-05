@@ -21,7 +21,7 @@ public class EmailVerificationActivity extends AppCompatActivity {
 
     private EditText edt_code;
     private Button btn_sendEmail;
-    private ImageButton btn_verify;
+    private ImageButton btn_verify,goSelectAct;
     private TextView tv_notice;
     private TextView tv_remaintime;
     Integer seconds_remains;
@@ -39,6 +39,7 @@ public class EmailVerificationActivity extends AppCompatActivity {
         btn_verify=(ImageButton)findViewById(R.id.btn_verify);
         tv_notice=(TextView) findViewById(R.id.tv_notice);
         tv_remaintime=(TextView)findViewById(R.id.tv_remaintime);
+        goSelectAct = (ImageButton)findViewById(R.id.goSelectAct);
         Runnable runn = new Runnable() {
             @Override
             public void run() {
@@ -65,6 +66,12 @@ public class EmailVerificationActivity extends AppCompatActivity {
                 }).start();
             }
         };
+        goSelectAct.setOnClickListener(new View.OnClickListener() { // 뒤로가기
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         btn_sendEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

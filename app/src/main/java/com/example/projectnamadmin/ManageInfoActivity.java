@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -20,7 +21,7 @@ public class ManageInfoActivity extends AppCompatActivity {
     TextView textname;
     TextView textemail;
     SharedPreferences deviceInfo;
-    ImageButton im_delaccount, im_otpre, im_chagepw;
+    ImageButton im_delaccount, im_otpre, im_chagepw, goSelectAct;
 
     public boolean onTouchReserve(MotionEvent event, RelativeLayout a){
         switch(event.getAction()){
@@ -57,8 +58,16 @@ public class ManageInfoActivity extends AppCompatActivity {
         im_chagepw = (ImageButton)findViewById(R.id.ChangePWimg);
         im_otpre = (ImageButton) findViewById(R.id.OTPReissuimg);
         im_delaccount = (ImageButton)findViewById(R.id.AccountDelimg);
+        goSelectAct = (ImageButton)findViewById(R.id.goSelectAct);
 
         deviceInfo=getSharedPreferences("accountOTP", 0);
+
+        goSelectAct.setOnClickListener(new View.OnClickListener() { // 뒤로가기
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         ChangePWrela.setOnClickListener(new View.OnClickListener() {
             @Override
