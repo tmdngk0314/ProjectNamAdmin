@@ -80,6 +80,20 @@ public class SelectActivity extends AppCompatActivity {
                 }
             }
         });
+        btn_logout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                switch(event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        btn_logout.setBackgroundResource(R.drawable.select_logout_touch);
+                        return false;
+                    case MotionEvent.ACTION_UP:
+                        btn_logout.setBackgroundResource(R.drawable.select_logout);
+                        return false;
+                    default: return false;
+                }
+            }
+        });
 
         firstRela.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event){
