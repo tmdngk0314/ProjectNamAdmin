@@ -13,6 +13,10 @@ import android.widget.Toast;
 public class SelectActivity extends AppCompatActivity {
     RelativeLayout firstRela, secondRela, thirdRela, forthRela, fifthRela;
     ImageButton lockermanage, noticemanage, otpcheck, overdue, btn_logout, btn_admininfo;
+
+    private final long FINISH_INTERVAL_TIME = 2000;
+    private long backPressedTime = 0;
+
     public boolean onTouchReserve(MotionEvent event, RelativeLayout a){
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
@@ -22,6 +26,22 @@ public class SelectActivity extends AppCompatActivity {
                 a.setBackgroundResource(R.drawable.select_box);
                 return false;
             default: return false;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        long tempTime = System.currentTimeMillis();
+        long intervalTime = tempTime - backPressedTime;
+
+        if (0 <= intervalTime && FINISH_INTERVAL_TIME >= intervalTime)
+        {
+            finish();
+        }
+        else
+        {
+            backPressedTime = tempTime;
+            Toast.makeText(getApplicationContext(), "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
         }
     }
 
