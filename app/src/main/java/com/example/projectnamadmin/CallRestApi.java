@@ -565,6 +565,38 @@ public class CallRestApi {
         }
     }
 
+    public String collectOverdueStorage(int num){
+        JSONObject info = new JSONObject();
+        String result;
+        try{
+            info.put("num", num);
+            postRestAPI(info, "admin/collect_overdue_storage");
+            result= "None";
+            if(lastResponseCode==200){
+                result=receivedJSONObject.getString("result");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            return "None";
+        }
+        return result;
+    }
+    public String returnOverdueStorage(int num){
+        JSONObject info = new JSONObject();
+        String result;
+        try{
+            info.put("num", num);
+            postRestAPI(info, "admin/return_overdue_storage");
+            result= "None";
+            if(lastResponseCode==200)
+                result=receivedJSONObject.getString("result");
+        }catch (Exception e){
+            e.printStackTrace();
+            return "None";
+        }
+        return result;
+    }
+
      /*
     public FullReservationInfo loadFullReservedDates(String lockername){
         JSONObject info = new JSONObject();

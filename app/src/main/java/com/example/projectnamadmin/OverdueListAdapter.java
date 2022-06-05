@@ -1,17 +1,25 @@
 package com.example.projectnamadmin;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class OverdueListAdapter extends BaseAdapter {
     private Context context;
     private OverdueListInfo overdueInfo;
     int pageValue, pageOffset, overduecount;
+    int index=0;
 
 
     public void putInfo(OverdueListInfo overdueInfo, int pageValue, int pageOffset, int overduecount){
@@ -57,7 +65,6 @@ public class OverdueListAdapter extends BaseAdapter {
         TextView txt_lockernum = (TextView) v.findViewById(R.id.txt_lockernum);
         ImageButton btn_collect = (ImageButton) v.findViewById(R.id.btn_collect);
         ImageButton btn_return = (ImageButton) v.findViewById(R.id.btn_return);
-        int index = 0;
         index = overduecount - i - ((pageValue - 1) * 10 + 1);
 
 
@@ -67,14 +74,23 @@ public class OverdueListAdapter extends BaseAdapter {
         txt_startdate.setText(overdueInfo.startdate[index]);
         txt_enddate.setText(overdueInfo.enddate[index]);
         txt_lockernum.setText(Integer.toString(overdueInfo.lockernum[index]));
+        CallRestApi apiCaller = new CallRestApi();
         if (overdueInfo.iscollected[index].equals("true")){
             txt_status.setText("미반환");
             txt_status.setTextColor(Color.parseColor("#FF8C00"));
+            btn_collect.setEnabled(false);
+            btn_return.setEnabled(true);
+            btn_collect.setBackgroundResource(R.drawable.btn_collect_inactive);
+            btn_return.setBackgroundResource(R.drawable.btn_return);
             // 회수버튼 비활성화, 반환버튼 활성화 + 이미지 설정
         }
         else {
             txt_status.setText("미회수");
             txt_status.setTextColor(Color.RED);
+            btn_return.setEnabled(false);
+            btn_collect.setEnabled(true);
+            btn_collect.setBackgroundResource(R.drawable.btn_collect);
+            btn_return.setBackgroundResource(R.drawable.btn_return_inactive);
             // 회수버튼 활성화, 반환버튼 비활성화 + 이미지 설정
         }
         if(overdueInfo.returntime[index].equals("none")){
@@ -83,19 +99,75 @@ public class OverdueListAdapter extends BaseAdapter {
             txt_returntime.setText(overdueInfo.returntime[index]);
             txt_status.setTextColor(Color.parseColor("#32CD32"));
             txt_status.setText("반환 완료");
+            btn_collect.setEnabled(false);
+            btn_collect.setEnabled(false);
+            btn_collect.setBackgroundResource(R.drawable.btn_collect_inactive);
+            btn_return.setBackgroundResource(R.drawable.btn_return_inactive);
             // 회수버튼 비활성화, 반환버튼 비활성화 + 이미지 설정
         }
+        btn_collect.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(btn_collect.isEnabled()) {
+                    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN)
+                        btn_collect.setBackgroundResource(R.drawable.btn_collect_touch);
+                    else if (motionEvent.getAction() == MotionEvent.ACTION_UP)
+                        btn_collect.setBackgroundResource(R.drawable.btn_collect);
+                }
+                return false;
+            }
+        });
+        btn_return.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(btn_return.isEnabled()) {
+                    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN)
+                        btn_return.setBackgroundResource(R.drawable.btn_return_touch);
+                    else if (motionEvent.getAction() == MotionEvent.ACTION_UP)
+                        btn_return.setBackgroundResource(R.drawable.btn_return);
+                }
+                return false;
+            }
+        });
 
         btn_collect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 회수 처리 api 호출
+                String result = apiCaller.collectOverdueStorage(overdueInfo.num[index]);
+                if (result.equals("diffIP")) {
+                    Log.e("Login Session", "다른 기기에서 로그인되었음" );
+                    Toast.makeText(context.getApplicationContext(), "다른 기기에서 로그인되어 종료합니다.", Toast.LENGTH_SHORT).show();
+                    ActivityCompat.finishAffinity(ContextCompat.getSystemService(context, OverdueLockerManageActivity.class));
+                    System.exit(0);
+                }else if(result.equals("success")){
+                    Toast.makeText(context.getApplicationContext(), "회수처리가 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                    txt_status.setText("미반환");
+                    txt_status.setTextColor(Color.parseColor("#FF8C00"));
+                    btn_collect.setEnabled(false);
+                    btn_return.setEnabled(true);
+                    btn_collect.setBackgroundResource(R.drawable.btn_collect_inactive);
+                    btn_return.setBackgroundResource(R.drawable.btn_return);
+                }
             }
         });
         btn_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 반환 처리 api 호출
+                String result = apiCaller.returnOverdueStorage(overdueInfo.num[index]);
+                if (result.equals("diffIP")) {
+                    Log.e("Login Session", "다른 기기에서 로그인되었음" );
+                    Toast.makeText(context.getApplicationContext(), "다른 기기에서 로그인되어 종료합니다.", Toast.LENGTH_SHORT).show();
+                    ActivityCompat.finishAffinity(ContextCompat.getSystemService(context, OverdueLockerManageActivity.class));
+                    System.exit(0);
+                }else if(result.equals("success")){
+                    Toast.makeText(context.getApplicationContext(), "반환처리가 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                    txt_status.setText("반환 완료");
+                    txt_status.setTextColor(Color.parseColor("#32CD32"));
+                    btn_collect.setEnabled(false);
+                    btn_return.setEnabled(false);
+                    btn_collect.setBackgroundResource(R.drawable.btn_collect_inactive);
+                    btn_return.setBackgroundResource(R.drawable.btn_return_inactive);
+                }
             }
         });
 
