@@ -40,7 +40,7 @@ public class LockerDetailActivity extends AppCompatActivity {
     CallRestApi apiCaller = new CallRestApi();
     RelativeLayout Rela_status,Rela_locker;
     LoadLockerDetails loadLockerDetails;
-    ImageButton btn_reservecancel, btn_ok;
+    ImageButton btn_reservecancel, btn_ok, btn_back;
 
 
     @Override
@@ -61,6 +61,7 @@ public class LockerDetailActivity extends AppCompatActivity {
         Rela_locker = (RelativeLayout)findViewById(R.id.Rela_locker);
         btn_reservecancel = (ImageButton)findViewById(R.id.btn_reservecancel);
         btn_ok = (ImageButton)findViewById(R.id.btn_ok);
+        btn_back = (ImageButton)findViewById(R.id.goSelectAct);
 
         statusInfo = apiCaller.loadLockerStatus();
 
@@ -86,12 +87,19 @@ public class LockerDetailActivity extends AppCompatActivity {
             }
 
         }
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Rela_locker.setVisibility(View.INVISIBLE);
                 checklockerlist.setEnabled(true);
+                btn_back.setEnabled(true);
             }
         });
         btn_ok.setOnTouchListener(new View.OnTouchListener(){
