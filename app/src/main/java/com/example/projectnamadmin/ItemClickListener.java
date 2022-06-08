@@ -3,6 +3,7 @@ package com.example.projectnamadmin;
 import static android.view.View.VISIBLE;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,14 +27,26 @@ public class ItemClickListener implements AdapterView.OnItemClickListener {
 
         if(lld.getStatus().equals("using")){
         ((LockerDetailActivity) context).txt_status.setText("사물함 이용중");
+            ((LockerDetailActivity) context).txt_status.setTextColor(Color.BLACK);
         /*detail api caller 사용해서 사용자 정보 불러오기*/
         ((LockerDetailActivity) context).txt_name.setText(lld.getname());
         ((LockerDetailActivity) context).txt_id.setText(lld.getid());
         ((LockerDetailActivity) context).txt_email.setText(lld.getemail());
         ((LockerDetailActivity) context).txt_startdate.setText(lld.getStartdate());
-        ((LockerDetailActivity) context).txt_enddate.setText(lld.getEnddate());}
-
+        ((LockerDetailActivity) context).txt_enddate.setText(lld.getEnddate());
+        }
+        if(lld.getStatus().equals("overdue")){
+            ((LockerDetailActivity) context).txt_status.setText("사물함 연체됨(회수 필요)");
+            ((LockerDetailActivity) context).txt_status.setTextColor(Color.RED);
+            /*detail api caller 사용해서 사용자 정보 불러오기*/
+            ((LockerDetailActivity) context).txt_name.setText(lld.getname());
+            ((LockerDetailActivity) context).txt_id.setText(lld.getid());
+            ((LockerDetailActivity) context).txt_email.setText(lld.getemail());
+            ((LockerDetailActivity) context).txt_startdate.setText(lld.getStartdate());
+            ((LockerDetailActivity) context).txt_enddate.setText(lld.getEnddate());
+        }
         if(lld.getStatus().equals("reserved")||lld.getStatus().equals("idle")) {
+            ((LockerDetailActivity) context).txt_status.setTextColor(Color.BLACK);
             ((LockerDetailActivity) context).txt_status.setText("이용중이 아닙니다.");
             ((LockerDetailActivity) context).txt_name.setText("이용중이 아닙니다.");
             ((LockerDetailActivity) context).txt_id.setText("이용중이 아닙니다.");
