@@ -314,7 +314,8 @@
             android:layout_below="@+id/btn_ok"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:background="@drawable/reservecancel" />
+            android:background="@drawable/reservecancel"
+            android:visibility="gone"/>
 
     </RelativeLayout>
 

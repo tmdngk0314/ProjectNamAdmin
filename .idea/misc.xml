@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_illegal_open_history.xml" value="0.21145833333333333" />
+        <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_locker_detail.xml" value="0.1234375" />
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_locker_list.xml" value="0.264" />
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_main.xml" value="0.2015625" />
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_notice.xml" value="0.144" />
@@ -11,6 +12,7 @@
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/illegalopenhistory_shape.xml" value="0.39273356401384085" />
         <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/notice_shape.xml" value="0.1234375" />
+        <entry key="..\:/Users/JW K/AndroidStudioProjects/Projectnam_admin/ProjectNamAdmin/app/src/main/res/layout/overduelocker_shape.xml" value="0.2037037037037037" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.114" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/drawable/border_gray.xml" value="0.1905" />
         <entry key="..\:/Users/tmdng/AndroidStudioProjects/ProjectNamAdmin/app/src/main/res/drawable/ic_baseline_campaign_24.xml" value="0.149" />
