@@ -21,7 +21,6 @@ public class OverdueListAdapter extends BaseAdapter {
     private Context context;
     private OverdueListInfo overdueInfo;
     int pageValue, pageOffset, overduecount;
-    int indexlist[];
 
     public void putInfo(OverdueListInfo overdueInfo, int pageValue, int pageOffset, int overduecount){
         this.overdueInfo=overdueInfo;
@@ -36,10 +35,6 @@ public class OverdueListAdapter extends BaseAdapter {
         this.pageValue = pageValue;
         this.pageOffset = pageOffset;
         this.overduecount = overduecount;
-        indexlist=new int[pageOffset];
-        for(int i=0; i<pageOffset; i++){
-            indexlist[i]=overdueInfo.num[i];
-        }
     }
 
     @Override
