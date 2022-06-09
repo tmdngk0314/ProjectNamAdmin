@@ -90,12 +90,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:fontFamily="@font/nanumsquareb"
-                    android:text="사용자들의 사물함을 관리합니다."
+                    android:text="사물함 상태를 확인합니다."
                     android:textColor="#000000"
                     android:textSize="11sp" />
             </LinearLayout>
 
             <ImageButton
+                android:id="@+id/btn_lockerarrow"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
@@ -134,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/nanumsquareb"
-                    android:text="연체된 사물함 관리"
+                    android:text="연체 관리"
                     android:textColor="#000000"
                     android:textSize="19sp" />
 
@@ -143,12 +144,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:fontFamily="@font/nanumsquareb"
-                    android:text="연체된 사물함을 관리합니다"
+                    android:text="연체된 사물함을 관리합니다."
                     android:textColor="#000000"
                     android:textSize="11sp" />
             </LinearLayout>
 
             <ImageButton
+                android:id="@+id/btn_overduearrow"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
@@ -186,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/nanumsquareb"
-                    android:text="공지사항 관리"
+                    android:text="공지사항"
                     android:textColor="#000000"
                     android:textSize="20sp" />
 
@@ -201,6 +203,7 @@
             </LinearLayout>
 
             <ImageButton
+                android:id="@+id/btn_noticearrow"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
@@ -238,7 +241,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/nanumsquareb"
-                    android:text="OTP 확인하기"
+                    android:text="OTP 확인"
                     android:textColor="#000000"
                     android:textSize="20sp" />
 
@@ -247,12 +250,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:fontFamily="@font/nanumsquareb"
-                    android:text="otp를 확인합니다."
+                    android:text="일회용 비밀번호를 확인합니다."
                     android:textColor="#000000"
                     android:textSize="11sp" />
             </LinearLayout>
 
             <ImageButton
+                android:id="@+id/btn_otparrow"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
@@ -291,7 +295,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/nanumsquareb"
-                    android:text="관리자 계정 관리"
+                    android:text="계정 관리"
                     android:textColor="#000000"
                     android:textSize="20sp" />
 
@@ -300,12 +304,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:fontFamily="@font/nanumsquareb"
-                    android:text="otp 재발급, 비밀번호 변경등"
+                    android:text="계정을 관리합니다."
                     android:textColor="#000000"
                     android:textSize="11sp" />
             </LinearLayout>
 
             <ImageButton
+                android:id="@+id/btn_infoarrow"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"

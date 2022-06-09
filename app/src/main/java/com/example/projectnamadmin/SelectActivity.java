@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class SelectActivity extends AppCompatActivity {
     RelativeLayout firstRela, secondRela, thirdRela, forthRela, fifthRela;
     ImageButton lockermanage, noticemanage, otpcheck, overdue, btn_logout, btn_admininfo;
-
+    ImageButton btn_lockerarrow, btn_overduearrow, btn_noticearrow, btn_OTParrow, btn_infoarrow;
     private final long FINISH_INTERVAL_TIME = 2000;
     private long backPressedTime = 0;
 
@@ -61,6 +61,42 @@ public class SelectActivity extends AppCompatActivity {
         overdue = (ImageButton)findViewById(R.id.img_overdue);
         btn_logout=(ImageButton)findViewById(R.id.imgBtnLogout);
         btn_admininfo = (ImageButton)findViewById(R.id.btn_admininfo);
+        btn_lockerarrow=findViewById(R.id.btn_lockerarrow);
+        btn_overduearrow=findViewById(R.id.btn_overduearrow);
+        btn_noticearrow=findViewById(R.id.btn_noticearrow);
+        btn_OTParrow=findViewById(R.id.btn_otparrow);
+        btn_infoarrow=findViewById(R.id.btn_infoarrow);
+
+        btn_lockerarrow.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event){
+                return onTouchReserve(event,firstRela);
+            }
+        });
+        btn_overduearrow.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return onTouchReserve(motionEvent, forthRela);
+            }
+        });
+        btn_noticearrow.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return onTouchReserve(motionEvent, secondRela);
+            }
+        });
+        btn_OTParrow.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return onTouchReserve(motionEvent, thirdRela);
+            }
+        });
+        btn_infoarrow.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return onTouchReserve(motionEvent, fifthRela);
+            }
+        });
 
         CallRestApi apiCaller = new CallRestApi();
         apiCaller.setFCMToken();
@@ -150,6 +186,13 @@ public class SelectActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btn_infoarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, EmailVerificationActivity.class);
+                startActivity(intent);
+            }
+        });
         fifthRela.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event){
                 return onTouchReserve(event,fifthRela);
@@ -176,13 +219,42 @@ public class SelectActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btn_lockerarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, LockerDetailActivity.class);
+                startActivity(intent);
+            }
+        });
         noticemanage.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event){
                 return onTouchReserve(event,secondRela);
 
             }
         });
+        noticemanage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, NoticeActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_noticearrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, NoticeActivity.class);
+                startActivity(intent);
+            }
+        });
         otpcheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectActivity.this, OtpActivity.class);
+                //otp액티비티로 바꿔야함
+                startActivity(intent);
+            }
+        });
+        btn_OTParrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SelectActivity.this, OtpActivity.class);
@@ -216,6 +288,13 @@ public class SelectActivity extends AppCompatActivity {
             }
         });
         overdue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SelectActivity.this, OverdueLockerManageActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_overduearrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(SelectActivity.this, OverdueLockerManageActivity.class);
